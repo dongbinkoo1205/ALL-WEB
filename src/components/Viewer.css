@@ -1,0 +1,173 @@
+.Viwer {
+}
+.Viwer .mainViewer {
+    width: 100%;
+    height: 100vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    color: white;
+}
+.Viwer .mainViewer::before {
+    content: '';
+    background-color: #0000002b;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.Viwer .mainViewer .backgroundCover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.Viwer .mainViewer .mvHeader {
+    position: absolute;
+    top: 50%;
+    left: 2%;
+    transform: translateY(-50%);
+}
+.Viwer .mainViewer .mvHeader .mvSubName {
+    font-size: 25px;
+}
+.Viwer .mainViewer .mvHeader .mvMainName {
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.Viwer .mainViewer .position_section {
+    position: absolute;
+    bottom: 7%;
+    left: 50%;
+}
+.Viwer .mainViewer .position_section > div {
+    margin: 13px 0;
+}
+.Viwer .mainViewer .position_section > div .cgf {
+    font-size: 14px;
+}
+.Viwer .mainViewer .position_section > div .ctf {
+    font-size: 16px;
+}
+.Viwer .mainViewer .position_section .positionCate {
+}
+
+.Viwer .mainViewer .position_section .positionNum {
+}
+
+.Viwer .mainViewer .position_section .positionLink {
+}
+
+.Viwer .mainViewer .position_section .positionLink p a {
+    color: white;
+}
+.Viwer .mainViewer .backgroundCover .positionInfo {
+    padding: 0 2%;
+    box-sizing: border-box;
+    width: 100%;
+    position: absolute;
+    bottom: 2%;
+    left: 0;
+}
+.Viwer .mainViewer .backgroundCover .positionInfo p {
+    text-align: right;
+}
+
+.Viwer .mainViewer .backgroundCover .positionInfo .InfoImg {
+}
+
+.Viwer .mainViewer .backgroundCover .positionInfo .InfoCopy {
+}
+
+.subDescContent {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+.subDescContent .leftCont {
+    background-color: black;
+    color: white;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.subDescContent .lcCont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.subDescContent .lcCont .lcSubHead {
+    font-size: 17px;
+    font-weight: bold;
+    color: #b6b6b6;
+    margin: 10px 0;
+}
+.subDescContent .lcCont .lcSubName {
+    font-size: 15px;
+    margin-top: 8px;
+}
+.subDescContent .lcCont .lcName {
+    margin-top: 32px;
+    font-size: 32px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.subDescContent .lcCont .lcName span {
+    margin-right: 5px;
+}
+
+.subDescContent .lcCont img {
+    width: 150px;
+    height: 150px;
+    border-radius: 16px;
+    object-fit: cover;
+    border: 2px solid #ffff;
+}
+
+.subDescContent .rightCont {
+    width: 50%;
+}
+.subDescContent .rightCont .rcCont {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 0 5%;
+    box-sizing: border-box;
+}
+.subDescContent .rightCont .rcCont p {
+    font-size: 20px;
+    font-weight: bold;
+}
+.subDescContent .rightCont .rcCont .rcBigText {
+    text-align: right;
+}
+.subDescContent .rightCont .rcCont .rcBigText span {
+    font-size: clamp(20px, 3.2vw, 50px);
+    font-weight: bold;
+    word-wrap: break-word; /* 단어가 길 경우 강제로 줄바꿈 */
+}
+.subDescContent .rightCont .rcCont .rcBigText .rcBigTextImg {
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px 0;
+}
+
+.subDescContent .rightCont .rcCont .rcBigText .rcBigTextImg img {
+    width: 250px;
+    height: 150px;
+    object-fit: cover;
+}

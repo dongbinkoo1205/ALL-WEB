@@ -1,0 +1,18 @@
+/* MainSlide.css */
+.MainSlide {
+    display: flex; /* 자식 요소 가로 배치 */
+    overflow: hidden; /* 범위를 벗어난 요소 숨기기 */
+    position: relative; /* 고정 위치 설정 */
+    /* top: 0; */
+    white-space: nowrap; /* 텍스트가 줄바꿈 없이 한 줄로 유지되도록 */
+}
+
+.MainSlideItem {
+    display: flex; /* 자식 요소 가로 배치 */
+    flex-shrink: 0; /* 크기 고정 */
+}
+
+.WebItem {
+    width: 200px; /* 개별 아이템의 너비 */
+    flex-shrink: 0;
+}

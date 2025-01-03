@@ -1,0 +1,6 @@
+.PortFolio .layout {
+    display: flex;
+    position: relative;
+    padding-top: 60px;
+    background-color: black;
+}

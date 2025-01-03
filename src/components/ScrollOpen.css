@@ -1,0 +1,132 @@
+.ScrollOpenWrap {
+    padding: 200px 0 0 0;
+    position: relative;
+    z-index: 10;
+    border-top: 1px solid black;
+    background-color: #000000f0;
+}
+.ScrollOpenWrap::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    z-index: 11;
+}
+.ScrollOpen {
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    color: rgb(255, 255, 255);
+    position: relative;
+    z-index: 16;
+}
+
+.ScrollOpen .VdCont {
+    width: 100%;
+    height: 20vh;
+    transform-origin: top left;
+}
+.ScrollOpen .VdCont video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.ScrollOpen .ScrollOpenText {
+    font-size: 16vw;
+    line-height: 1.1;
+    letter-spacing: -4px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 16;
+}
+.ScrollOpen .ScrollOpenText:first-child {
+    text-align: left;
+}
+.ScrollOpen .ScrollOpenText:first-child img {
+    display: inline;
+    width: 16vw;
+    object-fit: cover;
+}
+
+.ScrollOpen .ScrollOpenText:last-child {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+.ScrollOpen .ScrollOpenText:last-child span {
+    font-size: 15px;
+    letter-spacing: normal;
+    line-height: normal;
+    padding: 10px 20px;
+    display: flex;
+}
+.ScrollOpen .ScrollOpenText:last-child span img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.ScrollOpen .ScrollOpenText em.tt {
+    /* transform: rotate(-15deg); */
+    display: inline-block;
+}
+
+/* 스크롤 섹션의 하단 텍스트 wrap */
+.ScrollOpenWrap .SubText {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 100px 20px 200px 20px;
+    position: relative;
+    border-bottom: 1px solid black;
+    z-index: 12;
+    color: white;
+}
+.ScrollOpenWrap .SubText::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    opacity: 0.9;
+    z-index: 11;
+}
+.ScrollOpenWrap .SubText .SubTextLeftWrap {
+    width: 45%;
+    position: relative;
+    z-index: 16;
+}
+.ScrollOpenWrap .SubText .SubTextLeftWrap li {
+    font-size: clamp(14px, 3vw, 2vw);
+}
+
+.ScrollOpenWrap .SubText .SubTextRightWrap {
+    width: 50%;
+    line-height: 1.2;
+    text-align: right;
+    position: relative;
+    z-index: 16;
+}
+.ScrollOpenWrap .SubText .SubTextRightWrap .SubTexEn {
+    font-size: clamp(15px, 2vw, 3vw);
+}
+.ScrollOpenWrap .SubText .SubTextRightWrap .SubTexEn p {
+    margin: 20px 0;
+}
+
+.ScrollOpenWrap .SubText .SubTextRightWrap .SubTexEn span {
+    margin-left: 8px;
+}
+
+.ScrollOpenWrap .SubText .SubTextRightWrap .SubTexKr {
+    margin-top: 30px;
+    font-size: clamp(13px, 1vw, 2vw);
+}

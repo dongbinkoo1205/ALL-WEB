@@ -1,0 +1,41 @@
+.SubPageButton {
+    padding: 20px 34px;
+    font-size: 20px;
+    border: 1px solid white;
+    background-color: transparent;
+    border-radius: 9999px;
+    color: white;
+    font-weight: bold;
+    margin: 15px 0;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.SubPageButton:hover {
+    background-color: white;
+    border: 1px solid white;
+    color: black;
+}
+
+.SubPageButton_Small {
+    padding: 9px 25px;
+    font-size: 20px;
+}
+.SubPageButton_Medle {
+    padding: 25px 39px;
+    font-size: 25px;
+}
+.SubPageButton_Large {
+    padding: 30px 41px;
+    font-size: 30px;
+}
+
+.SubPageButton_Reverse {
+    border: 1px solid black;
+    background-color: transparent;
+    color: black;
+}
+.SubPageButton_Reverse:hover {
+    background-color: black;
+    border: 1px solid black;
+    color: white;
+}

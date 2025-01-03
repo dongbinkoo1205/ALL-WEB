@@ -1,0 +1,39 @@
+.MouseOverWrap {
+    padding: 150px 0;
+    position: relative;
+    width: 100%;
+    z-index: 12;
+}
+.MouseOverWrap::before {
+    content: '';
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    opacity: 0.97;
+    z-index: 0;
+}
+.MouseOver {
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 14;
+}
+.MouseOver span {
+    display: block;
+}
+.MouseOver span.id {
+    font-size: clamp(15px, 3vw, 1.2vw);
+    margin: 5px 0;
+}
+.MouseOver span.name {
+    font-size: clamp(30px, 5vw, 5vw);
+    border-bottom: 1px solid black;
+}
+.MouseOver span.desc {
+    font-size: clamp(15px, 3vw, 1vw);
+    margin: 5px 0;
+}

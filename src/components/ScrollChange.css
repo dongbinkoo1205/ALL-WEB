@@ -1,0 +1,235 @@
+/* 전체 래퍼 */
+
+/* 전체 래퍼 */
+.ScrollChangeWrapper {
+    position: relative;
+    height: calc(450vh + 30vw);
+    padding: 30vw 0 0 0;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+    z-index: 12;
+    backdrop-filter: blur(5px);
+}
+
+/* 추가된 :before로 그라디언트 레이어 생성 */
+.ScrollChangeWrapper::before {
+    content: ''; /* 빈 콘텐츠 생성 */
+    position: absolute; /* 부모 기준 배치 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #0900aa, #000000f0); /* 그라디언트 */
+    opacity: 0; /* 기본적으로 숨김 */
+    transition: opacity 0.5s ease;
+    z-index: -1; /* 부모 콘텐츠보다 뒤에 위치 */
+}
+
+/* ScrollChangeWrapper에 .black 클래스가 추가되면 그라디언트를 드러냄 */
+.ScrollChangeWrapper.black::before {
+    opacity: 1; /* 그라디언트 레이어를 보이게 설정 */
+}
+
+/* .black 상태에서 텍스트와 색상 조정 */
+.ScrollChangeWrapper.black {
+    color: white;
+}
+
+/* 텍스트 컨텐츠  */
+/* 텍스트 컨텐츠  */
+/* 텍스트 컨텐츠  */
+
+.ScrollChangeText {
+    position: sticky; /* 부모 요소 기준으로 고정 */
+    top: 50%;
+    transform: translateY(-50%); /* 뷰포트 중앙에서 고정 */
+    transition: all 0.3s ease; /* 상태 전환 시 부드럽게 이동 */
+    margin: auto; /* 중앙 정렬 */
+    color: #757575;
+}
+.ScrollChangeWrapper.black .ScrollChangeText {
+    color: white;
+}
+
+.ScrollChangeText .ScrollChangeSection {
+    width: auto;
+    height: 160px;
+    overflow: hidden;
+    margin: 20px 0;
+}
+.ScrollChangeText .ScrollChangeSection .ScrollChangeItem {
+    position: relative;
+    height: 100%; /* 부모 높이 맞춤 */
+    transition: transform 0.5s ease-in-out;
+}
+
+.ScrollChangeText .ScrollChangeSection .ScrollChangeItem .ScrollChangeDesc li span {
+    color: transparent; /* 내부 색상을 투명하게 설정 */
+    -webkit-text-stroke: 2px rgb(255, 255, 255); /* 테두리 두께와 색상 */
+}
+.ScrollChangeText .ScrollChangeSection:last-child {
+    margin: auto 0 0 0;
+    animation: none;
+}
+
+.ScrollChangeText > div ul {
+    align-items: center;
+    justify-content: flex-start;
+    width: max-content; /* 텍스트 길이에 맞게 조정 */
+    height: 100%;
+    display: flex; /* 가로로 배치 */
+}
+.ScrollChangeText > div ul.left {
+    animation: scrollLeft 80s linear infinite; /* 텍스트가 10초 동안 부드럽게 이동 */
+}
+
+.ScrollChangeText > div ul.right {
+    animation: scrollRight 100s linear infinite; /* 텍스트가 10초 동안 부드럽게 이동 */
+}
+
+.ScrollChangeText > div ul li {
+    white-space: nowrap;
+    line-height: 160px; /* height와 동일하게 설정 */
+    height: 100%; /* 부모 높이에 맞춤 */
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+.ScrollChangeText > div ul li > span {
+    font-size: clamp(40px, 20vw, 180px);
+    margin: 0px 50px;
+}
+.ScrollChangeText > div ul.ScrollChangeClick li > span {
+    font-size: clamp(40px, 20vw, 110px);
+}
+
+/* 애니메이션 정의 */
+@keyframes scrollLeft {
+    from {
+        transform: translateX(0); /* 텍스트 처음 위치 */
+    }
+    to {
+        transform: translateX(-50%); /* 전체 길이만큼 왼쪽으로 이동 */
+    }
+}
+/* 애니메이션 정의 */
+@keyframes scrollRight {
+    from {
+        transform: translateX(-50%); /* 텍스트 처음 위치 */
+    }
+    to {
+        transform: translateX(0%); /* 전체 길이만큼 왼쪽으로 이동 */
+    }
+}
+
+/* 사진 컨텐츠  */
+/* 사진 컨텐츠  */
+/* 사진 컨텐츠  */
+.ScrollChangeImage {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0%;
+    left: 0;
+}
+.ScrollChangeImage .ScrollChangeSection {
+    width: 100%;
+    height: 100%;
+    padding: 0 4%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.ScrollChangeImage .ScrollChangeSection::before {
+    content: ''; /* 빈 콘텐츠 생성 */
+    position: absolute; /* 부모 기준 배치 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000f0;
+    z-index: -2; /* 부모 콘텐츠보다 뒤에 위치 */
+}
+
+.ScrollChangeImage .ScrollChangeSection .ScrollImage {
+    width: clamp(250px, 50%, 600px);
+    height: 350px;
+    margin: 20vh 0;
+}
+.ScrollChangeImage .ScrollChangeSection .ScrollImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.ScrollChangeImage .ScrollChangeSection .ScrollImage .ScrollDesc {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0;
+}
+.ScrollChangeImage .ScrollChangeSection .ScrollImage .ScrollDesc li {
+    font-size: clamp(15px, 70%, 20px);
+}
+
+.ScrollChangeItem {
+}
+
+/* ScrollCenterWrap */
+/* ScrollCenterWrap */
+/* ScrollCenterWrap */
+/* ScrollCenterWrap */
+
+.ScrollCenterWrap {
+    background-color: #000;
+    color: white;
+    padding: 200px 30px 200px 30px;
+    position: relative;
+    backdrop-filter: blur(5px);
+    border-radius: 50px;
+    z-index: 10;
+    mix-blend-mode: difference;
+}
+
+.ScrollCenterWrap::before {
+    content: '';
+    background-color: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+.ScrollCenterWrap ul {
+}
+.ScrollCenterWrap ul li {
+    font-size: clamp(40px, 11vw, 160px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0.9;
+}
+
+.ScrollCenterWrap ul li video {
+    width: clamp(100px, 11vw, 160px);
+    height: clamp(100px, 11vw, 160px);
+    border-radius: 9999px;
+    object-fit: cover;
+}
+
+.ScrollCenterWrap p {
+    text-align: center;
+    font-size: clamp(15px, 13vw, 20px);
+    margin: 40px 0;
+    position: relative;
+}
+.ScrollCenterWrap .ButtonWrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}

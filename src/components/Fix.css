@@ -1,0 +1,191 @@
+.Fix {
+    width: 280px;
+    height: calc(100vh - 80px);
+    position: sticky;
+    top: 50px;
+    margin: 50px 15px;
+    padding: 0 15px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.Fix .FixLogo {
+    width: 150px;
+}
+.Fix .FixLogo > div > span {
+    display: inline-block;
+    margin: 0 0 12px 4px;
+}
+
+.Fix .FixLogo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.Fix .searchBox {
+    margin: 80px 0 50px 0;
+}
+.Fix .searchBox h3 {
+    font-size: 26px;
+}
+.Fix .volume_cont {
+    margin: 0 0 50px 0;
+}
+
+.Fix .volume_cont h3 {
+    font-size: 14px;
+}
+.Fix .volume_cont h3.subtitle {
+    font-weight: 300;
+    font-size: 13px;
+}
+.Fix .rangeNum {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.Fix .rangeInput {
+    margin: 20px 0 0 0;
+    width: 80%;
+    cursor: pointer;
+}
+
+/* 체크박스 리스트  */
+.Fix .check_List {
+    margin: 50px 0;
+    width: 100%;
+}
+.Fix .check_List .clTitle {
+    font-size: 14px;
+}
+.Fix .check_List .clData {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.Fix .check_List .clData .layerChange {
+    padding: 0;
+}
+.Fix .check_List .clData .layerChange button {
+    background: none;
+    border: none;
+    width: 25px;
+    height: 25px;
+}
+.Fix .check_List .clData .layerChange button:first-child {
+    transform: rotate(90deg) translate(-0.5px, 0px);
+}
+
+.Fix .check_List .clList {
+    width: 100%;
+    padding: 0;
+}
+.Fix .check_List .clList li {
+    width: 100%;
+    list-style: none;
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+}
+.Fix .check_List .clList li label {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 5px 0;
+}
+.Fix .check_List .clList li .borderBottom {
+    flex: 1;
+    border-bottom: 1px solid white;
+    margin: 0 10px;
+}
+.Fix .check_List .clList li .clListSum {
+    font-size: 12px;
+    transition: 0.5s;
+}
+
+.Fix .check_List .clList li input[type='checkbox'] {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    border: 1px solid white;
+    appearance: none;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-right: 10px;
+}
+input[type='checkbox']:checked {
+    background: rgb(255, 255, 255);
+    border: none !important;
+}
+input[type='range'] {
+    width: 100%; /* 슬라이더 길이 */
+    height: 6px; /* 슬라이더 높이 */
+    appearance: none; /* 기본 스타일 제거 */
+    background: #ddd; /* 트랙 색상 */
+    border-radius: 5px; /* 트랙 모서리 둥글게 */
+    outline: none; /* 포커스 효과 제거 */
+    opacity: 0.8; /* 전체 투명도 */
+}
+input[type='range']:hover {
+    opacity: 1; /* 호버 시 불투명하게 */
+}
+
+input[type='range']::-webkit-slider-runnable-track {
+    background: linear-gradient(to right, #ffd5d5, #ba0000); /* 트랙 색상 */
+    height: 6px; /* 트랙 높이 */
+    border-radius: 5px; /* 둥근 모서리 */
+}
+input[type='range']::-moz-range-track {
+    background: linear-gradient(to right, #ffd5d5, #ba0000); /* 트랙 색상 */
+    height: 6px;
+    border-radius: 5px;
+}
+input[type='range'] {
+    -webkit-appearance: none; /* 기본 스타일 제거 */
+    width: 100%; /* 바의 너비 */
+    height: 6px; /* 바의 높이 */
+    background: #ddd; /* 바의 색상 */
+    border-radius: 3px; /* 바의 둥근 모서리 */
+    outline: none;
+    margin: 0; /* 썸 위치 조정을 위한 여백 제거 */
+    padding: 0;
+}
+
+input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none; /* 기본 스타일 제거 */
+    width: 14px; /* 썸 크기 */
+    height: 14px;
+    background: #ffffff; /* 썸 색상 */
+    border-radius: 50%; /* 썸을 원형으로 */
+    cursor: pointer;
+    border: 1px solid #000000; /* 테두리 */
+    position: relative; /* 위치 조정 가능 */
+    margin-top: -4px; /* 썸을 트랙 중앙으로 이동 */
+}
+
+input[type='range']::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    background: #ffffff;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 1px solid #000000;
+    position: relative; /* 위치 조정 가능 */
+    margin-top: -4px; /* 썸을 트랙 중앙으로 이동 */
+}
+
+input[type='range'] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+input[type='range']::-ms-track {
+    width: 100%;
+    height: 8px;
+    background: transparent; /* 트랙 스타일을 투명하게 설정 */
+    border-color: transparent;
+    color: transparent;
+}

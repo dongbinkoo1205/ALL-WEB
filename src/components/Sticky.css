@@ -1,0 +1,87 @@
+.StickyWrap {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    background-color: black;
+    color: white;
+    position: relative;
+    padding: 20% 0 20% 0;
+}
+.StickyWrap .stickyItem {
+    width: 50%;
+    height: fit-content;
+    position: sticky;
+    top: 100px;
+    padding-left: 2%;
+}
+.StickyWrap .stickyItem p.smi {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+.StickyWrap .stickyItem p.mni {
+    font-size: 38px;
+    font-weight: bold;
+}
+.StickyWrap .stickyItem p.mni span {
+    color: #006aff;
+    font-weight: bold;
+    font-size: 43px;
+    border: 1px solid white;
+    border-radius: 9999px;
+    padding: 10px 20px;
+}
+
+.StickyWrap .stickyInfo {
+    width: 50%;
+    padding-top: 20%;
+}
+.StickyWrap .stickyInfo ul {
+    width: 100%;
+    padding: 0 2% 0 0;
+    box-sizing: border-box;
+}
+.StickyWrap .stickyInfo ul li.infoCont {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 60px 2%;
+    box-sizing: border-box;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+}
+.StickyWrap .stickyInfo ul li.infoCont > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: auto;
+}
+
+.StickyWrap .stickyInfo ul li.infoCont > div.infoText {
+    font-size: 25px;
+    font-weight: bold;
+}
+.StickyWrap .stickyInfo ul li.infoCont .info {
+    font-size: 30px;
+    font-weight: bold;
+}
+/* 레이아웃이 다른 클릭Wrap만 스타일 다르게. */
+.StickyWrap .stickyInfo ul li.infoClick {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 55px 2%;
+    box-sizing: border-box;
+}
+.StickyWrap .stickyInfo ul li.infoClick .infoText {
+    display: flex;
+    flex-direction: column;
+}
+.StickyWrap .stickyInfo ul li.infoClick .infoText span {
+    font-weight: bold;
+    font-size: 25px;
+}
+.StickyWrap .stickyInfo ul li.infoClick .info {
+    font-size: 30px;
+    font-weight: bold;
+}

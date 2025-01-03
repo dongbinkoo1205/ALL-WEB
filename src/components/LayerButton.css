@@ -1,0 +1,17 @@
+.button {
+    background-color: rgb(236, 236, 236);
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 18px;
+    white-space: nowrap;
+}
+.button_POSITIVE {
+    background-color: rgb(74, 187, 74);
+    color: WHITE;
+}
+.button_NEGATIVE {
+    background-color: rgb(231, 88, 88);
+    color: WHITE;
+}

@@ -1,0 +1,21 @@
+.VideoCustomCursor {
+    width: 100px;
+    height: 100px;
+    background-color: rgba(255, 0, 0, 0.345);
+    backdrop-filter: blur(10px);
+    border: 2px solid white;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.VideoCustomCursor .Cursor {
+    width: 55px;
+    height: 55px;
+    object-fit: cover;
+}
+.VideoCustomCursor p {
+    color: white;
+    font-size: 17px;
+}

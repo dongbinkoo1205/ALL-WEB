@@ -1,0 +1,79 @@
+/* 기본 검색 인풋 스타일 */
+.inputWrap {
+    position: relative;
+    width: 210px;
+}
+.inputWrap input {
+    font-size: 15px;
+    color: #ffffff;
+    border: none;
+    border-bottom: solid #aaaaaa 1px;
+    padding: 10px 0 5px 0;
+    position: relative;
+    background: none;
+    z-index: 5;
+}
+.nomarInput_Default {
+    font-size: 15px;
+    color: #ffffff;
+    width: 210px;
+    border: none;
+    border-bottom: solid #aaaaaa 1px;
+    padding-bottom: 10px;
+    position: relative;
+    background: none;
+    z-index: 5;
+}
+
+.nomarInput_Default::placeholder {
+    color: #aaaaaa;
+}
+
+.nomarInput_Default:focus {
+    outline: none;
+}
+
+.inputWrap span {
+    display: block;
+    position: absolute;
+    bottom: -0.5px;
+    left: 0; /* 초기값 */
+    background-color: #006aff;
+    width: 1px;
+    height: 2px;
+    border-radius: 2px;
+    transition: width 0.5s ease; /* 변화에 transition 추가 */
+}
+
+.inputWrap label {
+    position: absolute;
+    color: #aaa;
+    left: 0px;
+    font-size: 15px;
+    bottom: 8px;
+    transition: all 0.2s ease; /* 모든 속성에 transition */
+    transform: translateY(0); /* 초기값 */
+}
+
+.inputWrap label .labelHead {
+    font-size: 14px;
+    color: WHITE;
+    margin: 5px 0;
+}
+
+.nomarInput_Default:focus ~ label,
+.nomarInput_Default:valid ~ label {
+    font-size: 16px;
+    bottom: 40px;
+    color: #fff;
+    transform: translateY(-10px); /* translate로 위치 이동 */
+}
+
+.nomarInput_Default:focus ~ span,
+.nomarInput_Default:valid ~ span {
+    width: 100%; /* span 확장 */
+}
+
+.nomarInput_Large {
+    width: 300px;
+}

@@ -1,0 +1,243 @@
+.HorizontalScroll {
+    position: relative;
+}
+.HorizontalScroll > div {
+    background-color: black;
+}
+.HorizontalScroll > div div {
+    z-index: 10;
+}
+
+.HorizontalScroll .HorizontalSection01 {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    color: white;
+}
+.HorizontalScroll .HorizontalSection01 .HorizontalSection01_Text {
+    padding: 0 0 60px 20px;
+    width: 30%;
+    margin-right: 2%;
+}
+.HorizontalScroll .HorizontalSection01 .HorizontalSection01_Text ul {
+}
+.HorizontalScroll .HorizontalSection01 .HorizontalSection01_Text ul li {
+    margin: 15px 0;
+    font-size: clamp(13px, 2vw, 15px);
+}
+.HorizontalScroll .HorizontalSection01 .HorizontalSection01_Text ul li span {
+    display: inline-block;
+    width: 60px;
+}
+.HorizontalScroll .HorizontalSection01 .HorizontalSection01_Text ul li span img {
+    object-fit: cover;
+    width: 100%;
+}
+
+.HorizontalScroll .HorizontalSection01 .HorizontalSection01_Text .AboutBottomText {
+    width: 160px;
+    margin: 20px 0;
+}
+
+.HorizontalScroll .HorizontalSection01 .HorizontalSection01_Text img {
+    width: 100%;
+    object-fit: cover;
+}
+.HorizontalScroll .HorizontalSection01 .HorizontalSection01_Image {
+    width: 68%;
+    height: 100%;
+    position: relative;
+}
+.HorizontalScroll .HorizontalSection01 .HorizontalSection01_Image .imageCover {
+    position: relative;
+    top: 5%;
+    left: 15%;
+    width: 42%;
+    height: auto;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.HorizontalScroll .HorizontalSection01 .HorizontalSection01_Image .imageCover img {
+    width: 200%;
+    object-fit: cover;
+}
+.HorizontalScroll .HorizontalSection01 .HorizontalSection01_Image .imageCoverText {
+    position: absolute;
+    width: auto;
+    bottom: 2%;
+}
+.HorizontalScroll .HorizontalSection01 .HorizontalSection01_Image .imageCoverText ul {
+}
+.HorizontalScroll .HorizontalSection01 .HorizontalSection01_Image .imageCoverText ul li {
+    font-size: clamp(35px, 4.5vw, 70px);
+    line-height: 1.2;
+}
+.HorizontalScroll .HorizontalSection01 .HorizontalSection01_Image .imageCoverText ul li:first-child,
+.HorizontalScroll .HorizontalSection01 .HorizontalSection01_Image .imageCoverText ul li:nth-of-type(3) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.HorizontalScroll .HorizontalSection01 .HorizontalSection01_Image .imageCoverText ul li:nth-of-type(2) {
+    text-align: center;
+}
+.HorizontalScroll .HorizontalSection01 .HorizontalSection01_Image .imageCoverText ul li:nth-of-type(3) {
+    text-align: right;
+}
+.HorizontalScroll .HorizontalSection01 .HorizontalSection01_Image .imageCoverText ul li:nth-of-type(5) {
+    text-align: right;
+}
+.HorizontalScroll .HorizontalSection01 .HorizontalSection01_Image .imageCoverText ul li > div {
+    display: inline-block;
+    width: clamp(200px, 2vw, 400px);
+    height: 10px;
+    background-color: white;
+    margin: 0 20px;
+    mix-blend-mode: difference;
+}
+
+.HorizontalSection02 {
+    background-color: black;
+    position: relative;
+    display: flex;
+}
+.HorizontalSection02 .flowText {
+    transform-origin: left;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5vw;
+    color: white;
+    position: absolute;
+    top: 0%;
+}
+.HorizontalSection02 .flowText .midleLine {
+    display: inline-block;
+    width: clamp(50px, 1vw, 150px);
+    height: 10px;
+    background-color: white;
+    margin: 0 20px;
+}
+.HorizontalSection02 .AboutText {
+    margin: 0 4.35% 0 12.35%;
+    color: white;
+    width: clamp(415px, 10vw, 500px);
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.HorizontalSection02 .AboutText ul {
+}
+.HorizontalSection02 .AboutText ul li {
+    font-size: clamp(11px, 1vw, 15px);
+}
+
+.HorizontalSection02 .AboutText ul li.AboutTextLogo {
+    width: clamp(120px, 30vw, 250px);
+    margin: 30px 0;
+}
+.HorizontalSection02 .AboutText ul li img {
+    width: 100%;
+    object-fit: cover;
+}
+.HorizontalSection02 .imageCover {
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.HorizontalSection02 .imageCover img {
+    width: 150%;
+    object-fit: cover;
+}
+.HorizontalSection02 .descText {
+    width: auto;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-direction: column;
+    width: auto;
+    color: white;
+    margin: 0 30px;
+}
+.HorizontalSection02 .descText .mainDescText {
+    font-size: clamp(30px, 10vw, 80px);
+    text-align: right;
+}
+.HorizontalSection02 .descText .decoText {
+    font-size: clamp(16px, 5vw, 25px);
+    margin: 30px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.HorizontalSection02 .descText .decoText .midleLine {
+    width: clamp(50px, 3vw, 100px);
+    height: 1px;
+    background-color: white;
+    margin: 0 10px;
+}
+
+.HorizontalSection02 .descText .subDescText {
+}
+.HorizontalSection02 .descText .subDescText li {
+    margin: 15px 0;
+    text-align: right;
+}
+
+.HorizontalSection03 {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    /* filter: grayscale(0.8); */
+}
+
+.HorizontalSection03 .imgWrap {
+    width: 100%;
+    height: 100%;
+}
+.HorizontalSection03 .imgWrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.HorizontalSection03 .textWrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.HorizontalSection03 .textWrap li {
+    color: white;
+}
+.HorizontalSection03 .textWrap li:first-child {
+    letter-spacing: 7px;
+    font-size: clamp(12px, 2vw, 14px);
+}
+.HorizontalSection03 .textWrap li:nth-of-type(2) {
+    font-size: clamp(50px, 10vw, 133px);
+}
+.HorizontalSection03 .textWrap li:last-child {
+    font-size: clamp(16px, 2vw, 19px);
+    display: flex;
+    align-items: center;
+}
+.HorizontalSection03 .textWrap li span {
+    display: inline-block;
+    margin: 0 5px;
+    color: white;
+}

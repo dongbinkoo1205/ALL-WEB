@@ -1,0 +1,59 @@
+.scrollTextSection {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    position: relative;
+    z-index: 10;
+    opacity: 1;
+    color: rgb(255, 255, 255);
+    padding: 150px 0px;
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+}
+.scrollTextSection::before {
+    content: '';
+    background-color: #000000f0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.scrollTextSection .scrollSubText {
+    padding: 30px 50px 0 30px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+.scrollTextWrap {
+    width: 100%;
+}
+
+.scrollTextWrap .scrollText {
+    width: 100%;
+    font-size: 35vw;
+    white-space: nowrap;
+    transform-origin: left;
+    position: relative;
+}
+.scrollText span.gr {
+    color: #c1c1c1;
+}
+.scrollTextWrap .scrollText span {
+    position: relative;
+    letter-spacing: -15px;
+}
+.scrollTextWrap .scrollText span em {
+    font-size: 20px;
+    padding: 8px 18px;
+    position: absolute;
+    bottom: 0;
+    left: 25px;
+    letter-spacing: normal;
+}
