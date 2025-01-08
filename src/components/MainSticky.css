@@ -38,14 +38,16 @@
     display: block;
 }
 .MainText .TextWrap {
-    position: absolute;
-    bottom: 0%;
     width: 100%;
     display: flex;
     justify-content: space-around;
+    flex-direction: column;
+    position: absolute;
+    bottom: 0;
 }
 .MainText .TextWrap > div {
     position: relative;
+    overflow: hidden;
 }
 .MainText .TextWrap > div.TextDefault {
     width: fit-content;
@@ -59,42 +61,24 @@
 }
 
 .MainText .TextWrap > div.TextChange {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    font-size: 9vw;
-    height: auto;
+    display: grid;
     width: 50%;
-    text-align: center;
+    height: fit-content;
 }
 
-.MainText .TextWrap > div.TextChange > div {
-    position: absolute; /* 부모(.TextChange)를 기준으로 배치 */
-    top: 0;
-    left: 0;
-    width: 100%; /* 부모의 너비를 따라가도록 설정 */
-    font-size: 9vw;
+.MainText .TextWrap > div.TextChange > span {
+    grid-area: 1 / 1;
 }
 
-.MainText .TextWrap > div.TextChange .TextChangeWeb {
-}
-.MainText .TextWrap > div.TextChange .TextChangeUX {
-}
-.MainText .TextWrap > div.TextChange > div > p:first-child {
-}
-.MainText .TextWrap > div.TextChange > div > p:last-child {
-}
-.MainText .TextWrap > div.TextChange > div > p > img {
-    width: 30px;
+.mobText {
+    display: none;
 }
 
 /* 텍스트 애니메이션 */
 .subTextWrap {
-    position: ABSOLUTE;
-    top: -100px;
-    left: 20px;
     width: 100%;
+    height: 100px;
+    padding-left: 20px;
 }
 .MainTextDynamic {
     /* position: absolute; */
@@ -111,11 +95,13 @@
 .MainTextDynamic.visible {
     transform: translateY(0); /* 나타날 때: 제자리 */
     opacity: 1;
+    visibility: visible;
 }
 
 .MainTextDynamic.hidden {
     transform: translateY(100%); /* 사라질 때: 아래로 숨김 */
     opacity: 0;
+    visibility: hidden;
 }
 .MainTextDynamic img {
     width: 30px;
@@ -131,6 +117,47 @@
 }
 
 .SubStickySection p {
-    font-size: 40px;
+    font-size: clamp(20px, 5vw, 40px);
     color: rgb(255, 255, 255);
+}
+
+@media screen and (max-width: 767px) {
+    .MainText {
+        font-size: 11vw;
+    }
+    .MainText .TextWrap {
+        bottom: 20px;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 20px;
+        width: calc(100% - 20px);
+    }
+    .MainText .TextWrap > div.TextDefault {
+        width: 100%;
+    }
+    .MainText .TextWrap > div.TextChange {
+        width: 100%;
+    }
+
+    .MainTextDynamic.visible {
+        transform: translateY(0); /* 나타날 때: 제자리 */
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .MainTextDynamic.hidden {
+        transform: translateY(100%); /* 사라질 때: 아래로 숨김 */
+        opacity: 0;
+        visibility: hidden;
+    }
+    .subTextWrap {
+        display: none;
+    }
+    .mobText {
+        font-size: 15px;
+        display: block;
+    }
+    .MainText .TextWrap > div {
+    }
+
 }

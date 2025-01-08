@@ -28,39 +28,33 @@ function MainSticky() {
                     <div className="MainText font_kimm">
                         {/* 텍스트가 scrollState에 따라 애니메이션 */}
                         <div className="TextWrap">
+                            <div className="subTextWrap Pretendard">
+                                <p className={`MainTextDynamic  ${scrollState === 'WEB' ? 'visible' : 'hidden'}`}>
+                                    <img src={mainArrowGreen} alt="" />
+                                    우리는 웹사이트를 탐험하며 <br />
+                                    다양한 UI/UX 디자인 사례를 제공합니다.
+                                </p>
+                                <p className={`MainTextDynamic  ${scrollState === 'UX・UI' ? 'visible' : 'hidden'}`}>
+                                    <img src={mainArrowGreen} alt="" />
+                                    전 세계 독창적인 UI/UX 디자인을
+                                    <br />
+                                    <em>ALL WEB에서 아이디어를 탐구해보세요.</em>
+                                </p>
+                            </div>
                             <div className="TextDefault">
                                 <span>ALL OF</span>
-                                <div className="subTextWrap Pretendard">
-                                    <p className={`MainTextDynamic  ${scrollState === 'WEB' ? 'visible' : 'hidden'}`}>
-                                        <img src={mainArrowGreen} alt="" />
-                                        우리는 웹사이트를 탐험하며 <br />
-                                        다양한 UI/UX 디자인 사례를 제공합니다.
-                                    </p>
-                                    <p
-                                        className={`MainTextDynamic  ${
-                                            scrollState === 'UX・UI' ? 'visible' : 'hidden'
-                                        }`}
-                                    >
-                                        <img src={mainArrowGreen} alt="" />
-                                        전 세계 독창적인 UI/UX 디자인을
-                                        <br />
-                                        <em>ALL WEB에서 아이디어를 탐구해보세요.</em>
-                                    </p>
-                                </div>
                             </div>
                             <div className="TextChange ">
-                                <div className="TextChangeWeb">
-                                    <span className={`MainTextDynamic ${scrollState === 'WEB' ? 'visible' : 'hidden'}`}>
-                                        WEBSITE
-                                    </span>{' '}
-                                </div>
-                                <div className="TextChangeUX">
-                                    <span
-                                        className={`MainTextDynamic ${scrollState === 'UX・UI' ? 'visible' : 'hidden'}`}
-                                    >
-                                        DESIGNS
-                                    </span>
-                                </div>
+                                <span className={`MainTextDynamic ${scrollState === 'WEB' ? 'visible' : 'hidden'}`}>
+                                    WEBSITE
+                                </span>{' '}
+                                <span className={`MainTextDynamic ${scrollState === 'UX・UI' ? 'visible' : 'hidden'}`}>
+                                    DESIGNS
+                                </span>
+                            </div>
+                            <div className="mobText Pretendard">
+                                우리는 웹사이트를 탐험하며 <br />
+                                다양한 UI/UX 디자인 사례를 제공합니다.
                             </div>
                         </div>
                     </div>

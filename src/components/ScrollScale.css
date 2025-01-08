@@ -57,3 +57,28 @@
     left: 25px;
     letter-spacing: normal;
 }
+@media screen and (max-width: 767px) {
+    .scrollTextSection {
+        padding: 80px 0;
+    }
+    .SubStickySection {
+        padding: 120px 20px;
+    }
+    .scrollTextSection .scrollSubText {
+        font-size: clamp(12px, 2vw, 18px);
+        flex-direction: column;
+        padding: 30px 10px 10px 10px;
+    }
+    .scrollSubText .st {
+        margin-top: 10px;
+    }
+    .scrollTextWrap .scrollText span {
+        letter-spacing: -12px;
+        font-size: 40vw;
+    }
+    .scrollTextWrap .scrollText span em {
+        font-size: clamp(11px, 1vw, 18px);
+        padding: 0;
+        left: 10px;
+    }
+}

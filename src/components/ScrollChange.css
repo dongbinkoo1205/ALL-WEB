@@ -170,7 +170,7 @@
     padding: 12px 0;
 }
 .ScrollChangeImage .ScrollChangeSection .ScrollImage .ScrollDesc li {
-    font-size: clamp(15px, 70%, 20px);
+    font-size: clamp(12px, 70%, 20px);
 }
 
 .ScrollChangeItem {
@@ -184,7 +184,7 @@
 .ScrollCenterWrap {
     background-color: #000;
     color: white;
-    padding: 200px 30px 200px 30px;
+    padding: 200px 20px 200px 20px;
     position: relative;
     backdrop-filter: blur(5px);
     border-radius: 50px;
@@ -206,7 +206,7 @@
 .ScrollCenterWrap ul {
 }
 .ScrollCenterWrap ul li {
-    font-size: clamp(40px, 11vw, 160px);
+    font-size: clamp(47px, 11vw, 160px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -214,15 +214,15 @@
 }
 
 .ScrollCenterWrap ul li video {
-    width: clamp(100px, 11vw, 160px);
-    height: clamp(100px, 11vw, 160px);
+    width: clamp(80px, 11vw, 160px);
+    height: clamp(80px, 11vw, 160px);
     border-radius: 9999px;
     object-fit: cover;
 }
 
 .ScrollCenterWrap p {
     text-align: center;
-    font-size: clamp(15px, 13vw, 20px);
+    font-size: clamp(13px, 2vw, 20px);
     margin: 40px 0;
     position: relative;
 }
@@ -232,4 +232,31 @@
     align-items: center;
     position: relative;
     z-index: 10;
+}
+@media screen and (max-width: 767px) {
+    .ScrollChangeWrapper {
+        padding: 50vw 0 0 0;
+    }
+    .scrollTextWrap .scrollText {
+        font-size: 38vw;
+    }
+    .ScrollChangeImage .ScrollChangeSection .ScrollImage {
+        height: 250px;
+    }
+    .ScrollChangeImage .ScrollChangeSection .ScrollImage .ScrollDesc {
+        flex-direction: column;
+        align-items: baseline;
+    }
+    .ScrollCenterWrap p {
+        margin: 20px 0;
+    }
+    .SubPageButton_Large {
+        padding: 8px 15px;
+        font-size: 20px;
+    }
+}
+@media screen and (max-width: 400px) {
+    .ScrollChangeWrapper {
+        padding: 60vw 0 0 0;
+    }
 }

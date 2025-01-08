@@ -116,7 +116,7 @@
     z-index: 16;
 }
 .ScrollOpenWrap .SubText .SubTextRightWrap .SubTexEn {
-    font-size: clamp(15px, 2vw, 3vw);
+    font-size: clamp(12px, 2vw, 3vw);
 }
 .ScrollOpenWrap .SubText .SubTextRightWrap .SubTexEn p {
     margin: 20px 0;
@@ -128,5 +128,43 @@
 
 .ScrollOpenWrap .SubText .SubTextRightWrap .SubTexKr {
     margin-top: 30px;
-    font-size: clamp(13px, 1vw, 2vw);
+    font-size: clamp(12px, 1vw, 2vw);
+}
+@media screen and (max-width: 767px) {
+    .ScrollOpenWrap {
+        padding: 100px 0;
+    }
+    .ScrollOpen .ScrollOpenText {
+        font-size: 23vw;
+    }
+    .ScrollOpen .ScrollOpenText:first-child {
+        justify-content: center;
+    }
+    .ScrollOpen .ScrollOpenText:last-child {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .ScrollOpen .ScrollOpenText:first-child img {
+        width: 20vw;
+    }
+    .ScrollOpenWrap .SubText {
+        flex-direction: column;
+        padding: 150px 20px 0 20px;
+    }
+    .ScrollOpenWrap .SubText .SubTextLeftWrap {
+        width: 100%;
+        margin: 0px 0 50px;
+        text-align: center;
+    }
+    .ScrollOpenWrap .SubText .SubTextRightWrap {
+        width: 100%;
+        text-align: center;
+    }
+    .ScrollOpenWrap .SubText .SubTextRightWrap .SubTexEn p {
+        margin: 5px 0;
+    }
+    .ScrollOpenWrap .SubText .SubTextRightWrap .SubTexKr {
+        margin-top: 50px;
+    }
 }

@@ -7,6 +7,7 @@
     max-width: 600px; /* 최대 너비 */
     aspect-ratio: 16 / 9; /* 가로:세로 비율이 16:9 */
     z-index: 10;
+    display: block;
 }
 
 .MySwiperSlide .swiper {
@@ -108,4 +109,9 @@
     align-items: center;
     cursor: pointer;
     z-index: 10;
+}
+@media screen and (max-width: 767px) {
+    .MySwiperSlide {
+        display: none;
+    }
 }

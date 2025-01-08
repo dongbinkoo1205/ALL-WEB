@@ -25,9 +25,8 @@ const ScrollScale = () => {
             <ul className="scrollSubText">
                 <li className=" font_SCD3">Professional Community</li>
                 <li className="st Pretendard">
-                    우리는 다양한 배경과 전문성을 갖춘 뛰어난 전문가들로 구성되어 있으며, 가장 복잡한 문제까지도
-                    <br />
-                    선제적으로 해결할 수 있도록 종합적인 지원을 제공합니다.
+                    우리는 다양한 배경과 전문성을 갖춘 뛰어난 전문가들로 구성되어 있으며, <br />
+                    가장 복잡한 문제까지도 선제적으로 해결할 수 있도록 종합적인 지원을 제공합니다.
                 </li>
             </ul>
             <div className="scrollTextWrap">

@@ -65,6 +65,7 @@
 }
 .Fix .check_List .clData .layerChange {
     padding: 0;
+    display: block;
 }
 .Fix .check_List .clData .layerChange button {
     background: none;
@@ -188,4 +189,12 @@ input[type='range']::-ms-track {
     background: transparent; /* 트랙 스타일을 투명하게 설정 */
     border-color: transparent;
     color: transparent;
+}
+@media screen and (max-width: 1000px) {
+    .Fix .check_List .clData .layerChange {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 767px) {
 }

@@ -25,8 +25,8 @@ const PortFolio = () => {
 
     return (
         <div className="PortFolio">
-            <Header title={'UX・UI를 만나보세요.'} size={'20px'} font={'NEXON Lv1 Gothic OTF'}></Header>
             <div className="layout bgColorBlack">
+                <Header title={'UX・UI를 만나보세요.'} size={'20px'} font={'NEXON Lv1 Gothic OTF'}></Header>
                 <Fix
                     range={range}
                     onRangeChange={onRangeChange}
@@ -38,5 +38,4 @@ const PortFolio = () => {
         </div>
     );
 };
-
 export default PortFolio;
