@@ -7,7 +7,9 @@ import { SubCategories, SubCategorieDesc, IndustryItems } from './Categories';
 
 import Input from './Input';
 
-const List = ({ range, layerChange, handleSumCheck }) => {
+const List = ({ range, layerChange, handleSumCheck, mobCloseSection, handleMobClose }) => {
+    // 모바일 버전에서 옵션 설정 닫기 토글
+    const mobCloseToggle = mobCloseSection ? 'block' : 'none';
     // DataDispatchContext, DataStateContext에서 가져온 함수 및 객체 활용
     const { onChangeSearch, search, onUpdate, onDelete, onChangeNewCheck, newCheck } = useContext(DataDispatchContext);
     const data = useContext(DataStateContext);
@@ -85,6 +87,7 @@ const List = ({ range, layerChange, handleSumCheck }) => {
                     <span className="head Pretendard">ALL Options+</span>
                     <Icon className={`downArrow downArrow_${addClassName}`} name="chevronDown" fontSize={'16px'} />
                 </button>
+
                 <ul className={`scList scList_${addClassName} scrollBar ScrollAdd`}>
                     <p>Industry Search</p>
                     <Input
@@ -177,6 +180,14 @@ const List = ({ range, layerChange, handleSumCheck }) => {
                     <p>데이터가 없습니다.</p>
                 )}
             </div>
+            {!mobCloseSection && (
+                <div className="mobCloseFalseCont">
+                    <div onClick={handleMobClose}>
+                        <Icon name={'faSliders'} fontSize={'16px'} color={'white'} />
+                        <span className="Pretendard">필터</span>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };

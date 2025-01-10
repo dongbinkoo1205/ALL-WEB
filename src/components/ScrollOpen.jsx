@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './ScrollOpen.css';
 import MainVd from './../assets/video/mainVd.mp4'; // 비디오 파일 경로
 import circleGif from './../assets/gif/circleGif.gif'; // 비디오 파일 경로
@@ -24,24 +24,33 @@ function ScrollOpen() {
         const { clientX, clientY } = event;
         updateCursorPosition(clientX, clientY); // x, y 값을 개별 인자로 전달
     };
-    // 동영상 높이 조절
+
+    // 스크롤시 열리는 동영상 Ref
+    const openSectionRef = useRef();
+
+    // 동영상 높이 조절에 대한 상태
     const [sectionOpen, setSectionOpen] = useState(0);
     useEffect(() => {
         const handleScroll = () => {
-            const ScrollOpenSection = document.querySelector('.ScrollOpen');
-            if (!ScrollOpenSection) return;
-            const rect = ScrollOpenSection.getBoundingClientRect();
-            const sectionHeight = rect.height / 2;
-            const progress = Math.min(Math.max((sectionHeight - rect.top) / sectionHeight, 0), 1);
-            const newHeight = progress * 60;
+            if (!openSectionRef) return;
+            const rect = openSectionRef.current.getBoundingClientRect();
+            const sectionHeight = rect.height * 1.1;
+            const viewportHeight = window.innerHeight; // 뷰포트 높이 가져오기
+            const progress = Math.min(
+                Math.max((sectionHeight - rect.top) / (sectionHeight + viewportHeight / 2), 0),
+                1
+            );
+            const newHeight = Math.max(progress * 10, Math.min(progress * 60, 60));
+
             setSectionOpen(newHeight);
         };
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
     return (
         <div className="ScrollOpenWrap">
-            <div className="ScrollOpen">
+            <div className="ScrollOpen" ref={openSectionRef}>
                 <p className="ScrollOpenText font_minsans">
                     WE L<img src={circleGif} alt="" />
                     VE

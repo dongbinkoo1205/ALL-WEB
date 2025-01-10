@@ -48,6 +48,8 @@ function MainPage() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+
+
     return (
         <div className="MainPage">
             {/* Scene Component for 3D Scroll Effects */}

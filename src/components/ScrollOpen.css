@@ -132,10 +132,10 @@
 }
 @media screen and (max-width: 767px) {
     .ScrollOpenWrap {
-        padding: 100px 0;
+        padding: 250px 0;
     }
     .ScrollOpen .ScrollOpenText {
-        font-size: 23vw;
+        font-size: 22vw;
     }
     .ScrollOpen .ScrollOpenText:first-child {
         justify-content: center;
@@ -150,7 +150,7 @@
     }
     .ScrollOpenWrap .SubText {
         flex-direction: column;
-        padding: 150px 20px 0 20px;
+        padding: 250px 20px 0 20px;
     }
     .ScrollOpenWrap .SubText .SubTextLeftWrap {
         width: 100%;

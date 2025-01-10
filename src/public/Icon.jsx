@@ -7,8 +7,9 @@ import {
     faHeart,
     faCopyright,
     faCaretRight,
+    faXmark,
+    faSliders,
 } from '@fortawesome/free-solid-svg-icons';
-
 // 아이콘 모음 객체
 
 const icons = {
@@ -18,6 +19,8 @@ const icons = {
     faHeart: faHeart,
     faCopyright: faCopyright,
     faCaretRight: faCaretRight,
+    faXmark: faXmark,
+    faSliders: faSliders,
 };
 
 // 공통 Icon 컴포넌트

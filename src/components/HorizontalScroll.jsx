@@ -25,60 +25,80 @@ function HorizontalScroll() {
 
     useEffect(() => {
         const container = containerRef.current;
-
-        // ScrollTrigger와 gsap 초기화
-        gsap.registerPlugin(ScrollTrigger);
-
         // 가로 길이 계산
         const totalWidth = container.scrollWidth; // 콘텐츠 전체 너비
         const viewportWidth = window.innerWidth; // 뷰포트 너비
         const scrollDistance = totalWidth - viewportWidth; // 스크롤 거리
 
-        // ScrollTrigger 생성
-        const animation = gsap.to(container, {
-            x: -scrollDistance, // 가로로 콘텐츠의 끝까지 이동
-            ease: 'none',
-            scrollTrigger: {
-                trigger: container,
-                start: 'top top', // 시작 지점
-                end: `+=${scrollDistance}+100vw`, // 동적으로 종료 지점 설정
+        // 모바일 엔드포인트 계산
+        const totalHeight = container.scrollHeight;
+        const viewportHeight = window.innerHeight;
+        const MobEndPoint = totalHeight - viewportHeight;
 
-                scrub: true, // 스크롤과 동기화
-                pin: true, // 스크롤 트리거 동안 고정
+        // ScrollTrigger와 gsap 초기화
+        gsap.registerPlugin(ScrollTrigger);
+
+        // 클린업 시 기존 트리거 제거 및 새로고침
+        const clearTriggers = () => {
+            ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+            ScrollTrigger.refresh(); // 트리거 새로고침
+        };
+
+        // 애니메이션 변수 선언
+        let animation;
+
+        // 화면 크기 768px 이상: 가로 스크롤
+        ScrollTrigger.matchMedia({
+            '(min-width: 768px)': function () {
+                animation = gsap.to(container, {
+                    x: -scrollDistance, // 가로로 콘텐츠의 끝까지 이동
+                    ease: 'none',
+                    scrollTrigger: {
+                        trigger: container,
+                        start: 'top top', // 시작 지점
+                        end: `+=${scrollDistance}+100vw`, // 동적으로 종료 지점 설정
+
+                        scrub: true, // 스크롤과 동기화
+                        pin: true, // 스크롤 트리거 동안 고정
+                    },
+                    onLeave: () => {
+                        // gsapContent가 끝난 후 HorizontalSection03을 활성화
+                        document.querySelector('.HorizontalSection03').style.zIndex = 1;
+                    },
+                });
             },
-            onLeave: () => {
-                // gsapContent가 끝난 후 HorizontalSection03을 활성화
-                document.querySelector('.HorizontalSection03').style.zIndex = 1;
+
+            // 화면 크기 768px 이하: 가로 스크롤
+            '(max-width: 768px)': function () {
+                animation = gsap.to(container, {
+                    y: () => -MobEndPoint,
+                    ease: 'none',
+                    scrollTrigger: {
+                        trigger: container,
+                        start: 'top top',
+                        end: `+=${MobEndPoint}`,
+                        scrub: true,
+                        pin: false,
+                    },
+                });
             },
         });
-
-        // 클린업: 트리거와 애니메이션 제거
+        // 클린업: 트리거 제거 및 새로고침
         return () => {
-            animation.kill(); // 애니메이션 제거
-            ScrollTrigger.getAll().forEach((trigger) => trigger.kill()); // 모든 트리거 제거
+            clearTriggers();
         };
     }, [gsap, ScrollTrigger]);
-
     // 스크롤시 동영상, 이미지 움직임
     const videoLeftRef = useRef();
     const imageLeftRef = useRef();
     // 괄호안에는 useRef와 속도값이 들어감
     const videoLeft = HorizontalScrollMove(videoLeftRef, 200);
-    const imageLeft = HorizontalScrollMove(imageLeftRef, 400);
+    const imageLeft = HorizontalScrollMove(imageLeftRef, 100);
 
     return (
         <div className="HorizontalScroll Pretendard">
-            <div
-                className="gsapContent"
-                ref={containerRef}
-                style={{
-                    display: 'flex',
-                    width: '360vw',
-                    height: '100vh',
-                    overflow: 'hidden',
-                }}
-            >
-                <div className="HorizontalSection01" ref={videoLeftRef} style={{ width: '35.29%', height: '100%' }}>
+            <div className="gsapContent" ref={containerRef}>
+                <div className="HorizontalSection01" ref={videoLeftRef}>
                     <div className="HorizontalSection01_Text">
                         <ul>
                             <li>
@@ -150,11 +170,20 @@ function HorizontalScroll() {
                         </div>
                     </div>
                 </div>
-                <div className="HorizontalSection02" ref={imageLeftRef} style={{ width: '35.29%', height: '100%' }}>
+                <div className="HorizontalSection02" ref={imageLeftRef}>
                     <div
                         className="flowText"
                         style={{
                             transform: `translateY(${-videoLeft}px) rotate(90deg) translate(-4%, -50%) scale(4)`,
+                            transition: 'transform 0.1s ease',
+                        }}
+                    >
+                        All Web<div className="midleLine"></div>Everything in the World
+                    </div>
+                    <div
+                        className="flowTextMob"
+                        style={{
+                            transform: `translateX(${-videoLeft}px) `,
                             transition: 'transform 0.1s ease',
                         }}
                     >
@@ -203,7 +232,7 @@ function HorizontalScroll() {
                         </ul>
                     </div>
                 </div>
-                <div className="HorizontalSection03" style={{ width: '29.41%', height: '100%' }}>
+                <div className="HorizontalSection03">
                     <div className="imgWrap">
                         <img src={AboutImage3} alt="" />
                     </div>

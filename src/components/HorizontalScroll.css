@@ -1,20 +1,25 @@
 .HorizontalScroll {
     position: relative;
-}
-.HorizontalScroll > div {
+    overflow-x: hidden;
     background-color: black;
+}
+.HorizontalScroll .gsapContent {
+    display: flex;
+    width: 360vw;
+    height: 100dvh;
+    overflow: hidden;
 }
 .HorizontalScroll > div div {
     z-index: 10;
 }
 
 .HorizontalScroll .HorizontalSection01 {
-    width: 100%;
-    height: 100%;
     position: relative;
     display: flex;
     align-items: flex-end;
     color: white;
+    width: 35.29%;
+    height: 100%;
 }
 .HorizontalScroll .HorizontalSection01 .HorizontalSection01_Text {
     padding: 0 0 60px 20px;
@@ -104,6 +109,8 @@
     background-color: black;
     position: relative;
     display: flex;
+    width: 35.29%;
+    height: 100%;
 }
 .HorizontalSection02 .flowText {
     transform-origin: left;
@@ -123,10 +130,14 @@
     background-color: white;
     margin: 0 20px;
 }
+.HorizontalSection02 .flowTextMob {
+    display: none;
+}
+
 .HorizontalSection02 .AboutText {
     margin: 0 4.35% 0 12.35%;
     color: white;
-    width: clamp(415px, 10vw, 500px);
+    width: clamp(360px, 10vw, 500px);
     height: 100%;
     display: flex;
     align-items: center;
@@ -134,7 +145,7 @@
 .HorizontalSection02 .AboutText ul {
 }
 .HorizontalSection02 .AboutText ul li {
-    font-size: clamp(11px, 1vw, 15px);
+    font-size: clamp(13px, 1vw, 15px);
 }
 
 .HorizontalSection02 .AboutText ul li.AboutTextLogo {
@@ -169,7 +180,7 @@
     margin: 0 30px;
 }
 .HorizontalSection02 .descText .mainDescText {
-    font-size: clamp(30px, 10vw, 80px);
+    font-size: clamp(45px, 10vw, 80px);
     text-align: right;
 }
 .HorizontalSection02 .descText .decoText {
@@ -195,10 +206,9 @@
 
 .HorizontalSection03 {
     position: relative;
-    width: 100%;
-    height: 100vh;
     overflow: hidden;
-    /* filter: grayscale(0.8); */
+    width: 29.41%;
+    height: 100dvh;
 }
 
 .HorizontalSection03 .imgWrap {
@@ -240,4 +250,96 @@
     display: inline-block;
     margin: 0 5px;
     color: white;
+}
+
+@media screen and (max-width: 767px) {
+    .HorizontalScroll {
+        overflow: auto;
+        position: relative;
+    }
+    .HorizontalScroll .gsapContent {
+        flex-direction: column;
+        overflow: visible;
+        height: auto;
+        width: 100dvw;
+        overflow-x: hidden;
+    }
+    .HorizontalScroll .HorizontalSection01 {
+        flex-direction: column;
+        max-width: 100dvw;
+        width: 100%;
+        align-items: normal;
+    }
+    .HorizontalScroll .HorizontalSection01 .HorizontalSection01_Text {
+        width: 100%;
+        padding: 0 20px;
+        margin: 150px 0 100px 0;
+    }
+    .HorizontalScroll .HorizontalSection01 .HorizontalSection01_Image {
+        width: 100%;
+        max-width: 100dvw;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .HorizontalScroll .HorizontalSection01 .HorizontalSection01_Image .imageCover {
+        position: static;
+        height: 200px;
+        width: 100%;
+    }
+    .HorizontalScroll .HorizontalSection01 .HorizontalSection01_Image .imageCover img {
+        height: 250px;
+        width: 100%;
+    }
+    .HorizontalScroll .HorizontalSection01 .HorizontalSection01_Image .imageCoverText {
+        /* bottom: auto;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%; */
+        position: static;
+    }
+    .HorizontalScroll .HorizontalSection01 .HorizontalSection01_Image .imageCoverText ul li > div {
+        display: none;
+    }
+    .HorizontalSection02 {
+        flex-direction: column;
+        width: 100%;
+    }
+    .HorizontalSection02 .flowText {
+        display: none;
+    }
+
+    .HorizontalSection02 .flowTextMob {
+        transform-origin: left;
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 80px;
+        color: white;
+    }
+    .HorizontalSection02 .flowTextMob .midleLine {
+        display: inline-block;
+        width: 120px;
+        height: 3px;
+        background-color: white;
+        margin: 0 20px;
+    }
+    .HorizontalSection02 .AboutText {
+        margin: 150px 0 100px 0;
+        padding: 0 20px;
+        width: 100%;
+    }
+    .HorizontalSection02 .AboutText ul li.AboutTextLogo {
+        margin: 20px auto;
+        width: 150px;
+    }
+    .HorizontalSection02 .imageCover {
+        width: 100%;
+    }
+    .HorizontalSection02 .imageCover img {
+        width: 100%;
+    }
+    .HorizontalSection03 {
+        width: 100%;
+    }
 }

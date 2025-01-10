@@ -2,7 +2,7 @@ import './PortFolio.css';
 import Fix from '../components/Fix';
 import List from '../components/List';
 import Header from '../components/Header';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const PortFolio = () => {
     const [range, setRange] = useState({ min: 0, max: 11340 });
@@ -23,6 +23,25 @@ const PortFolio = () => {
         setCheckedSum(sum);
     };
 
+    // 모바일(767px)이하일 때, Fix 컨텐츠 상태 변경
+    const [mobCloseSection, setMobCloseSection] = useState(true);
+    const handleMobClose = () => {
+        setMobCloseSection((prevState) => !prevState);
+    };
+    // 화면 크기 체크 함수 767 이하일 때 상태 변경
+    const checkScreenWidth = () => {
+        window.innerWidth <= 767 ? setMobCloseSection(false) : setMobCloseSection(true);
+    };
+
+    // 컴포넌트 마운트 시 실행
+    useEffect(() => {
+        // 초기 함수 실행으로 현재 화면넓이 측정 하고
+        checkScreenWidth();
+        // 혹시라도 윈도우 사이즈가 리사이즈 되면 다시 실행
+        window.addEventListener('resize', checkScreenWidth);
+
+        return () => window.removeEventListener('resize', checkScreenWidth);
+    }, []);
     return (
         <div className="PortFolio">
             <div className="layout bgColorBlack">
@@ -32,8 +51,16 @@ const PortFolio = () => {
                     onRangeChange={onRangeChange}
                     handleClassChange={handleClassChange}
                     checkedSum={checkedSum}
+                    mobCloseSection={mobCloseSection}
+                    handleMobClose={handleMobClose}
                 ></Fix>
-                <List range={range} layerChange={layerChange} handleSumCheck={handleSumCheck}></List>
+                <List
+                    range={range}
+                    layerChange={layerChange}
+                    handleSumCheck={handleSumCheck}
+                    mobCloseSection={mobCloseSection}
+                    handleMobClose={handleMobClose}
+                ></List>
             </div>
         </div>
     );

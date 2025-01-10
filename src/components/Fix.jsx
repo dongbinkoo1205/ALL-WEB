@@ -3,9 +3,10 @@ import { useState, useContext } from 'react';
 import { DataDispatchContext } from '../Context/DataProvider';
 import { MainOption, labels } from './Categories';
 import { getLogo } from '../util/Mlogo';
+import Icon from '../public/Icon';
 import './Fix.css';
 
-function Fix({ range, onRangeChange, onFilterChange, handleClassChange, checkedSum }) {
+function Fix({ range, onRangeChange, onFilterChange, handleClassChange, checkedSum, mobCloseSection, handleMobClose }) {
     // 메인메뉴 검색 기능에 필요한 usecontext
     const { onChangeSearch, search, onChangeNewCheck, newCheck, selectedKey } = useContext(DataDispatchContext);
 
@@ -46,16 +47,32 @@ function Fix({ range, onRangeChange, onFilterChange, handleClassChange, checkedS
             activeButton: buttonName, // 현재 활성화된 버튼
         });
     };
+
     const iColor = toggleColor.isDefaultColor ? '#4F555A' : '#fff';
     const iColor2 = toggleColor.isDefaultColor ? '#fff' : '#4F555A';
 
+    // 모바일 버전에서 옵션 설정 닫기 토글
+    const mobCloseToggle = mobCloseSection ? 'block' : 'none';
+
+    
+
     return (
-        <div className="Fix scrollBar Pretendard ScrollAdd">
-            <div className="FixLogo">
-                <div className="Pretendard">
-                    <span>세상의 모든 웹</span>
+        <div className="Fix scrollBar Pretendard ScrollAdd" style={{ display: mobCloseToggle }}>
+            <div className="FixTopWrap">
+                <div className="FixLogo">
+                    <div className="Pretendard">
+                        <span>세상의 모든 웹</span>
+                    </div>
+                    <img className="Mlogo" src={getLogo(2)} alt="" />
                 </div>
-                <img className="Mlogo" src={getLogo(2)} alt="" />
+                <div
+                    className="MobClose"
+                    onClick={() => {
+                        handleMobClose();
+                    }}
+                >
+                    <Icon name={'faXmark'} fontSize={'28px'} color={'white'} />
+                </div>
             </div>
             <div className="searchBox">
                 <Input
@@ -158,6 +175,14 @@ function Fix({ range, onRangeChange, onFilterChange, handleClassChange, checkedS
                         </li>
                     ))}
                 </ul>
+                {mobCloseSection && (
+                    <div className="mobCloseTrueCont">
+                        <div onClick={handleMobClose}>
+                            <Icon name={'subArrow'} fontSize={'18px'} color={'black'} />
+                            <span className="Pretendard">확인하기</span>
+                        </div>
+                    </div>
+                )}
             </div>
         </div>
     );

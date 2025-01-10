@@ -9,6 +9,9 @@
 .List .searchCategories {
     position: relative;
     margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 .List .searchCategories .scHead {
     display: inline-block;

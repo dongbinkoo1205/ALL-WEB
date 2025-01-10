@@ -61,9 +61,7 @@
     .scrollTextSection {
         padding: 80px 0;
     }
-    .SubStickySection {
-        padding: 120px 20px;
-    }
+
     .scrollTextSection .scrollSubText {
         font-size: clamp(12px, 2vw, 18px);
         flex-direction: column;

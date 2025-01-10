@@ -993,7 +993,7 @@ body[data-aos-easing='ease-in-out-quart'] [data-aos] {
 }
 .Fix {
     width: 280px;
-    height: calc(100vh - 80px);
+    height: calc(100dvh - 80px);
     position: sticky;
     top: 50px;
     margin: 50px 15px;
@@ -1512,7 +1512,7 @@ input[type='range']::-ms-track {
 }
 .Viwer .mainViewer {
     width: 100%;
-    height: 100vh;
+    height: 100dvh;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1581,7 +1581,7 @@ input[type='range']::-ms-track {
 .subDescContent {
     display: flex;
     width: 100%;
-    min-height: 100vh;
+    min-height: 100dvh;
 }
 .subDescContent .leftCont {
     background-color: #000;
@@ -1731,7 +1731,7 @@ input[type='range']::-ms-track {
 }
 .StickyWrap {
     width: 100%;
-    min-height: 100vh;
+    min-height: 100dvh;
     display: flex;
     background-color: #000;
     color: #fff;
@@ -1844,7 +1844,7 @@ input[type='range']::-ms-track {
     position: sticky;
     top: 00%;
     width: 100%;
-    height: 100vh;
+    height: 100dvh;
     z-index: 10;
     font-size: 9vw;
     font-weight: 700;
@@ -2769,7 +2769,7 @@ input[type='range']::-ms-track {
     position: fixed;
     top: 0;
     width: 100%;
-    height: 100vh;
+    height: 100dvh;
     z-index: 1;
 }
 .canvasWrap:before {

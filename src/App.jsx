@@ -1,10 +1,10 @@
 import { Route, Routes } from 'react-router-dom';
 import CombinedProvider from './Context/CombinedProvider';
-import PortFolio from './Pages/PortFolio';
-import Detail from './Pages/Detail';
-import NotFound from './Pages/NotFound';
-import MainPage from './Pages/MainPage';
-import About from './Pages/About';
+import PortFolio from './pages/PortFolio';
+import Detail from './pages/Detail';
+import NotFound from './pages/NotFound';
+import MainPage from './pages/MainPage';
+import About from './pages/About';
 import ScrollToTop from './components/ScrollToTop';
 function App() {
     return (

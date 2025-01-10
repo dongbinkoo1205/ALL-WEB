@@ -14,6 +14,8 @@ function ScrollChange() {
     const itemRefs = useRef([]); // ScrollChangeItem 참조
     const sectionRef = useRef();
 
+    // 다른 페이지에 넘어갔을 때 sectionRef가 없기 때문에 return으로 종료
+    if (!sectionRef.current) return;
     useEffect(() => {
         const handleScroll = () => {
             const viewportHeight = window.innerHeight;
@@ -44,7 +46,9 @@ function ScrollChange() {
         };
 
         window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
     }, []);
 
     return (
