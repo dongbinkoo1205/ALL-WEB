@@ -63,7 +63,7 @@ function ScrollOpen() {
                     onMouseLeave={handleMouseLeave}
                     onMouseMove={handleMouseMove}
                     // 네비게이션
-                    onClick={() => nav(`/PortFolio`)}
+                    onClick={() => nav(`/Portfolio`)}
                 >
                     <video src={MainVd} loop autoPlay muted playsInline />
                 </div>

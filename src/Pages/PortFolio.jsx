@@ -4,9 +4,9 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { useEffect, useState } from 'react';
 
-import './PortFolio.css';
+import './Portfolio.css';
 
-const PortFolio = () => {
+const Portfolio = () => {
     const [range, setRange] = useState({ min: 0, max: 11340 });
 
     const onRangeChange = (newRange) => {
@@ -68,4 +68,4 @@ const PortFolio = () => {
         </div>
     );
 };
-export default PortFolio;
+export default Portfolio;
