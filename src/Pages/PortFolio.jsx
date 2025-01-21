@@ -2,6 +2,7 @@ import './PortFolio.css';
 import Fix from '../components/Fix';
 import List from '../components/List';
 import Header from '../components/Header';
+import Footer from '../components/footer';
 import { useEffect, useState } from 'react';
 
 const PortFolio = () => {
@@ -62,6 +63,7 @@ const PortFolio = () => {
                     handleMobClose={handleMobClose}
                 ></List>
             </div>
+            <Footer option="black" />
         </div>
     );
 };

@@ -1,10 +1,12 @@
 import './WebItem.css';
 import React, { useContext, useState } from 'react';
-import { DataDispatchContext } from '../Context/DataProvider';
 import { useNavigate } from 'react-router-dom';
 import WebItemCursor from '../components/WebItemCursor';
+import { MediaQueryContext } from '../Context/MediaQueryContext';
 
 const WebItem = ({ id, name, layerChange, photoUrl, randomSubindustryItems, enName, enSubName }) => {
+    const { isMobile } = useContext(MediaQueryContext);
+
     // 현재 사용하지 않는 함수
     // const { onDelete, onUpdate } = useContext(DataDispatchContext);\
     // const onChangeCheckbox = () => {
@@ -58,7 +60,7 @@ const WebItem = ({ id, name, layerChange, photoUrl, randomSubindustryItems, enNa
                     WebItemCursorPosition={WebItemCursorPosition} // 마우스 위치 전달
                 />
             </div>
-            <div className="mainPhotoDesc" style={{ opacity: MouseOverWebItem ? '0' : '1' }}>
+            <div className="mainPhotoDesc" style={{ opacity: !isMobile && MouseOverWebItem ? '0' : '1' }}>
                 <ul>
                     <li className="id">#{id} Portfolio</li>
                     <li className="name">{enName}</li>

@@ -5,12 +5,11 @@ import Detail from './pages/Detail';
 import NotFound from './pages/NotFound';
 import MainPage from './pages/MainPage';
 import About from './pages/About';
-import ScrollToTop from './components/ScrollToTop';
+
 function App() {
     return (
         <div className="App">
             <CombinedProvider>
-                <ScrollToTop />
                 <Routes>
                     <Route path="/" element={<MainPage />} />
                     <Route path="/PortFolio" element={<PortFolio />} />

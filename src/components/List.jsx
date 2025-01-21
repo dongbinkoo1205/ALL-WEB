@@ -5,11 +5,23 @@ import { useContext, useState, useEffect } from 'react';
 import { DataStateContext, DataDispatchContext } from '../Context/DataProvider';
 import { SubCategories, SubCategorieDesc, IndustryItems } from './Categories';
 
+// 반응형 컨텍스트
+import { MediaQueryContext } from '../Context/MediaQueryContext';
+
 import Input from './Input';
 
 const List = ({ range, layerChange, handleSumCheck, mobCloseSection, handleMobClose }) => {
-    // 모바일 버전에서 옵션 설정 닫기 토글
-    const mobCloseToggle = mobCloseSection ? 'block' : 'none';
+    // 반응형 컨텍스트 선언
+    const { isMobile } = useContext(MediaQueryContext);
+
+    // 데이터 개수 제어 상태(10개까지만 보여주며, 10개 초과시 더보기 버튼)
+    const [visibleCount, setVisibleCount] = useState(10); // 초기 표시 개수
+
+    // "더보기" 버튼 클릭 핸들러
+    const handleLoadMore = () => {
+        setVisibleCount((prevCount) => prevCount + 10); // 10개씩 추가 표시
+    };
+
     // DataDispatchContext, DataStateContext에서 가져온 함수 및 객체 활용
     const { onChangeSearch, search, onUpdate, onDelete, onChangeNewCheck, newCheck } = useContext(DataDispatchContext);
     const data = useContext(DataStateContext);
@@ -77,19 +89,63 @@ const List = ({ range, layerChange, handleSumCheck, mobCloseSection, handleMobCl
 
     return (
         <div className="List Pretendard">
+            {isMobile && (
+                <div className="mobTitle font_minsans">
+                    <div className="mobTitleIcon ">
+                        <Icon className={`downArrow`} name="faSun" fontSize={'13px'} color={'red'} />
+                        <span className="Pretendard">ALL WEB</span>
+                    </div>
+                    <div>
+                        WEB부터 APP까지
+                        <br />
+                        디지털 세상을 한 번에,
+                        <br />
+                        그리고 한 눈에
+                    </div>
+                </div>
+            )}
             <div className="searchCategories ">
-                <button
-                    className="scHead "
-                    onClick={() => {
-                        setAddClassName(addClassName === 'subMenuOn' ? 'subMenuOff' : 'subMenuOn');
-                    }}
-                >
-                    <span className="head Pretendard">ALL Options+</span>
-                    <Icon className={`downArrow downArrow_${addClassName}`} name="chevronDown" fontSize={'16px'} />
-                </button>
+                {isMobile ? (
+                    <button
+                        className="MobileScHead"
+                        onClick={() => {
+                            setAddClassName(addClassName === 'subMenuOn' ? 'subMenuOff' : 'subMenuOn');
+                        }}
+                    >
+                        <span className="head Pretendard">ALL Options</span>
+                        <Icon className={`downArrow downArrow_${addClassName}`} name="chevronDown" fontSize={'14px'} />
+                    </button>
+                ) : (
+                    <button
+                        className="scHead "
+                        onClick={() => {
+                            setAddClassName(addClassName === 'subMenuOn' ? 'subMenuOff' : 'subMenuOn');
+                        }}
+                    >
+                        <span className="head Pretendard">ALL Options+</span>
+                        <Icon className={`downArrow downArrow_${addClassName}`} name="chevronDown" fontSize={'16px'} />
+                    </button>
+                )}
 
                 <ul className={`scList scList_${addClassName} scrollBar ScrollAdd`}>
-                    <p>Industry Search</p>
+                    <div className="scListTop">
+                        <p>Industry Search</p>
+                        {isMobile && (
+                            <button
+                                onClick={() => {
+                                    setAddClassName(addClassName === 'subMenuOn' ? 'subMenuOff' : 'subMenuOn');
+                                }}
+                            >
+                                <Icon
+                                    className={`downArrow downArrow_${addClassName}`}
+                                    name="faXmark"
+                                    fontSize={'25px'}
+                                    color={'white'}
+                                />
+                            </button>
+                        )}
+                    </div>
+
                     <Input
                         name="subMenu"
                         value={search.subMenu}
@@ -135,7 +191,10 @@ const List = ({ range, layerChange, handleSumCheck, mobCloseSection, handleMobCl
                                         />
                                         <span>{key}</span>
                                     </label>
-                                    <span className="SubCategoriesIcon">
+                                    <span
+                                        className="SubCategoriesIcon"
+                                        style={{ display: isMobile ? 'none' : 'block' }}
+                                    >
                                         <Icon
                                             className="IconDesc"
                                             name="question"
@@ -167,15 +226,28 @@ const List = ({ range, layerChange, handleSumCheck, mobCloseSection, handleMobCl
             </div>
             <div className="todos_wrapper">
                 {filteredData.length > 0 ? (
-                    filteredData.map((item) => (
-                        <WebItem
-                            key={item.id}
-                            {...item}
-                            onUpdate={onUpdate}
-                            onDelete={onDelete}
-                            layerChange={layerChange}
-                        />
-                    ))
+                    <>
+                        {filteredData.slice(0, visibleCount).map((item) => (
+                            <WebItem
+                                key={item.id}
+                                {...item}
+                                onUpdate={onUpdate}
+                                onDelete={onDelete}
+                                layerChange={layerChange}
+                            />
+                        ))}
+
+                        {/* 데이터가 더 있을 때만 "더보기" 버튼 표시 */}
+                        {visibleCount < filteredData.length && (
+                            <button className="load_more_button" onClick={handleLoadMore}>
+                                <Icon className={`faCaretDown`} name="faCaretDown" fontSize={'13px'} color={'white'} />
+                                <div>LEAD MORE</div>
+                                <div>
+                                    ({visibleCount / 10}/{filteredData.length / 10})
+                                </div>
+                            </button>
+                        )}
+                    </>
                 ) : (
                     <p>데이터가 없습니다.</p>
                 )}

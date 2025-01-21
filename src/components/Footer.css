@@ -1,0 +1,116 @@
+.footer {
+    color: #333;
+    background-color: #fff;
+    padding: 20px;
+    border-top: 1px solid #ccc;
+    position: relative;
+    z-index: 10;
+    opacity: 0.97;
+}
+
+.footerTop {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    text-align: right;
+    height: 60vh;
+    margin-bottom: 10px;
+    line-height: 1.5;
+    border-bottom: 1px solid black;
+    padding-bottom: 20px;
+}
+.footerTop > p {
+    font-size: clamp(35px, 5vw, 50px);
+    color: #5b5b5b;
+    font-weight: 500;
+}
+.footerTop > p > span {
+    color: rgb(0, 0, 0);
+}
+
+.footerMiddle {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footerBottom {
+    padding-top: 20px;
+    font-size: 14px;
+    color: #777;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footerBottom ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+    margin: 0 10px;
+}
+
+.footerBottom ul li {
+    font-size: 14px;
+}
+
+.footerBottom ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.footerBottom ul li a:hover {
+    text-decoration: underline;
+}
+
+/* 푸터 테마 블랙 */
+.footer_black {
+    background-color: black;
+    color: white;
+    border-top: none;
+}
+.footer_black .footerTop {
+}
+.footer_black .footerTop > p > span {
+    color: white;
+}
+.footer_black .footerSection ul li a {
+    color: #c3c3c3;
+}
+.footer_black .footerTop {
+}
+.footer_black .footerBottom {
+}
+.footer_black .footerBottom ul li a {
+    color: #777;
+}
+
+@media screen and (max-width: 767px) {
+    .footerTop {
+        height: 40vh;
+    }
+
+    .footerMiddle {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        margin-bottom: 20px;
+    }
+
+    .footerBottom {
+        font-size: 12px;
+    }
+
+    .footerBottom ul {
+        flex-direction: column;
+        gap: 5px;
+        display: none;
+    }
+    .footerBottom ul li {
+        font-size: 12px;
+    }
+    .footerBottom p {
+        text-align: right;
+        width: 100%;
+    }
+}

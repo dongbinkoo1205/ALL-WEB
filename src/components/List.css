@@ -2,10 +2,14 @@
     display: flex;
     flex-direction: column;
     border-left: 1px solid white;
-    width: 100%;
+    width: calc(100% - 380px);
     padding: 20px 15px;
     position: relative;
 }
+.List .mobTitle {
+    display: block;
+}
+
 .List .searchCategories {
     position: relative;
     margin-bottom: 20px;
@@ -196,7 +200,7 @@
 .List .todos_wrapper {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     font-size: 15px;
 }
 .List .todos_wrapper .WebItem {
@@ -224,4 +228,92 @@
 
 .List .todos_wrapper .WebItem.clListS {
     width: calc(50% - 40px);
+}
+/* 더보기 버튼 */
+.load_more_button {
+    margin: 30px;
+    background-color: transparent;
+}
+.load_more_button > div {
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+}
+.load_more_button > div:last-child {
+    font-size: 15px;
+    color: #ccc;
+    font-weight: 100;
+}
+
+@media screen and (max-width: 767px) {
+    .List {
+        border-left: none;
+        width: 100%;
+        z-index: 1;
+    }
+    /* 모바일 버전의 상단 텍스트*/
+    .List .mobTitle {
+        display: block;
+        color: white;
+        font-size: 30px;
+        margin-bottom: 30px;
+        line-height: 1.3;
+    }
+    .List .mobTitle .mobTitleIcon {
+        margin-bottom: 20px;
+    }
+    .List .mobTitle .mobTitleIcon span {
+        font-size: 12px;
+        margin-left: 5px;
+    }
+
+    /* 모바일 버전의 상단 ALL OPTIONS 버튼 레이어 */
+    .List .MobileScHead {
+        background-color: transparent;
+        color: white;
+        font-size: 18px;
+        border-bottom: 1px solid white;
+    }
+    .List .MobileScHead span {
+        margin-right: 5px;
+    }
+
+    .List .searchCategories .scList .scListTop {
+        display: flex;
+        justify-content: space-between;
+    }
+    .List .searchCategories .scList .scListTop button {
+        background-color: transparent;
+    }
+
+    .List .searchCategories .scList {
+        left: 0;
+        width: 100%;
+        position: fixed;
+        height: 100dvh;
+        padding: 50px 20px;
+        border: none;
+    }
+    .List .searchCategories {
+        margin-bottom: 50px;
+    }
+
+    .List .searchCategories .SubCategoriesWrap {
+        justify-content: space-between;
+    }
+    .List .searchCategories .SubCategoriesWrap .SubCategories {
+        width: calc(50% - 10px);
+        min-width: auto;
+        margin: 0;
+    }
+    .List .searchCategories .SubCategoriesWrap .SubCategories:first-child {
+        margin-right: 10px;
+    }
+    .List .todos_wrapper .WebItem {
+        margin: 20px 0;
+    }
+
+    .SubCategorieDesc {
+        display: none;
+    }
 }

@@ -1,16 +1,31 @@
 .HorizontalScroll {
     position: relative;
     overflow-x: hidden;
-    background-color: black;
 }
+.HorizontalScroll > div > div {
+    z-index: 10;
+}
+
+.HorizontalScroll .imgWrap {
+    width: 100dvw;
+    height: 100dvh;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.HorizontalScroll .imgWrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .HorizontalScroll .gsapContent {
     display: flex;
-    width: 360vw;
+    width: 360dvw;
     height: 100dvh;
     overflow: hidden;
-}
-.HorizontalScroll > div div {
-    z-index: 10;
+    position: relative;
+    justify-content: flex-start;
 }
 
 .HorizontalScroll .HorizontalSection01 {
@@ -18,8 +33,9 @@
     display: flex;
     align-items: flex-end;
     color: white;
-    width: 35.29%;
+    width: 120dvw;
     height: 100%;
+    background-color: black;
 }
 .HorizontalScroll .HorizontalSection01 .HorizontalSection01_Text {
     padding: 0 0 60px 20px;
@@ -42,7 +58,7 @@
 }
 
 .HorizontalScroll .HorizontalSection01 .HorizontalSection01_Text .AboutBottomText {
-    width: 160px;
+    width: 130px;
     margin: 20px 0;
 }
 
@@ -106,12 +122,16 @@
 }
 
 .HorizontalSection02 {
-    background-color: black;
     position: relative;
     display: flex;
-    width: 35.29%;
+    width: 140dvw;
     height: 100%;
 }
+.PcImageDescSection {
+    display: flex;
+    background-color: black;
+}
+
 .HorizontalSection02 .flowText {
     transform-origin: left;
     white-space: nowrap;
@@ -122,6 +142,9 @@
     color: white;
     position: absolute;
     top: 0%;
+    left: 3%;
+    background-color: black;
+    z-index: 11;
 }
 .HorizontalSection02 .flowText .midleLine {
     display: inline-block;
@@ -131,21 +154,22 @@
     margin: 0 20px;
 }
 .HorizontalSection02 .flowTextMob {
-    display: none;
 }
 
 .HorizontalSection02 .AboutText {
-    margin: 0 4.35% 0 12.35%;
     color: white;
-    width: clamp(360px, 10vw, 500px);
+    width: clamp(560px, 10vw, 500px);
     height: 100%;
+    padding: 0 100px;
     display: flex;
     align-items: center;
+    background-color: black;
 }
 .HorizontalSection02 .AboutText ul {
 }
 .HorizontalSection02 .AboutText ul li {
     font-size: clamp(13px, 1vw, 15px);
+    text-align: left;
 }
 
 .HorizontalSection02 .AboutText ul li.AboutTextLogo {
@@ -157,16 +181,17 @@
     object-fit: cover;
 }
 .HorizontalSection02 .imageCover {
-    width: 50%;
+    padding: 0 50px;
+    width: 50dvw;
     height: 100%;
     overflow: hidden;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 }
 .HorizontalSection02 .imageCover img {
-    width: 150%;
-    object-fit: cover;
+    width: 200%;
+    max-width: 100dvw;
 }
 .HorizontalSection02 .descText {
     width: auto;
@@ -205,15 +230,19 @@
 }
 
 .HorizontalSection03 {
-    position: relative;
+    position: fixed;
+    top: 0;
+    right: 0;
     overflow: hidden;
-    width: 29.41%;
+    width: auto;
     height: 100dvh;
+    min-width: 100dvw;
 }
 
 .HorizontalSection03 .imgWrap {
     width: 100%;
     height: 100%;
+    overflow: hidden;
 }
 .HorizontalSection03 .imgWrap img {
     width: 100%;
@@ -254,14 +283,14 @@
 
 @media screen and (max-width: 767px) {
     .HorizontalScroll {
-        overflow: auto;
+        overflow: hidden;
         position: relative;
     }
     .HorizontalScroll .gsapContent {
         flex-direction: column;
         overflow: visible;
         height: auto;
-        width: 100dvw;
+        width: auto;
         overflow-x: hidden;
     }
     .HorizontalScroll .HorizontalSection01 {
@@ -273,7 +302,7 @@
     .HorizontalScroll .HorizontalSection01 .HorizontalSection01_Text {
         width: 100%;
         padding: 0 20px;
-        margin: 150px 0 100px 0;
+        margin: 100px 0 100px 0;
     }
     .HorizontalScroll .HorizontalSection01 .HorizontalSection01_Image {
         width: 100%;
@@ -283,12 +312,11 @@
     }
     .HorizontalScroll .HorizontalSection01 .HorizontalSection01_Image .imageCover {
         position: static;
-        height: 200px;
+        height: 300px;
         width: 100%;
     }
     .HorizontalScroll .HorizontalSection01 .HorizontalSection01_Image .imageCover img {
-        height: 250px;
-        width: 100%;
+        width: 300%;
     }
     .HorizontalScroll .HorizontalSection01 .HorizontalSection01_Image .imageCoverText {
         /* bottom: auto;
@@ -297,15 +325,22 @@
         left: 50%; */
         position: static;
     }
+    .HorizontalScroll .HorizontalSection01 .HorizontalSection01_Image .imageCoverText ul li {
+        margin: 10px 0;
+    }
     .HorizontalScroll .HorizontalSection01 .HorizontalSection01_Image .imageCoverText ul li > div {
         display: none;
     }
     .HorizontalSection02 {
         flex-direction: column;
         width: 100%;
+        background-color: black;
+        margin-bottom: 100dvh;
+    }
+    .PcImageDescSection {
+        flex-direction: column;
     }
     .HorizontalSection02 .flowText {
-        display: none;
     }
 
     .HorizontalSection02 .flowTextMob {
@@ -330,8 +365,10 @@
         width: 100%;
     }
     .HorizontalSection02 .AboutText ul li.AboutTextLogo {
-        margin: 20px auto;
-        width: 150px;
+        width: 140px;
+    }
+    .HorizontalSection02 .AboutText ul li {
+        text-align: left;
     }
     .HorizontalSection02 .imageCover {
         width: 100%;

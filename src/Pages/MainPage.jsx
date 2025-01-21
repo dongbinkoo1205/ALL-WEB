@@ -9,7 +9,8 @@ import VideoCustomCursor from '../components/VideoCustomCursor';
 import MouseOver from '../components/MouseOver.jsx';
 import TransCustomCursor from '../components/TransCustomCursor';
 import ScrollChange from '../components/ScrollChange.jsx';
-import Scene from '../components/ThreeJsScene.jsx'; // Scene 컴포넌트 추가
+import Scene from '../components/ThreeJsScene.jsx';
+import Footer from '../components/footer.jsx';
 
 function MainPage() {
     const scrollY = useRef(0);
@@ -48,8 +49,6 @@ function MainPage() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-
-
     return (
         <div className="MainPage">
             {/* Scene Component for 3D Scroll Effects */}
@@ -85,6 +84,7 @@ function MainPage() {
                 <MouseOver />
                 <TransCustomCursor />
             </div>
+            <Footer />
         </div>
     );
 }

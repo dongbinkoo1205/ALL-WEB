@@ -1,6 +1,5 @@
 import React from 'react';
 import './SubPageButton.css';
-
 function SubPageButton({ text, type, url }) {
     return (
         <button

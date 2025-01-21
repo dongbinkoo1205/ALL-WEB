@@ -1,6 +1,13 @@
 .PortFolio .layout {
     display: flex;
+    flex-wrap: wrap;
     position: relative;
     padding-top: 60px;
     background-color: black;
+    border-bottom: 1px solid white;
+}
+@media screen and (max-width: 767px) {
+    .PortFolio .layout {
+        flex-direction: column;
+    }
 }

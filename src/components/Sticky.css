@@ -7,8 +7,10 @@
     position: relative;
     padding: 20% 0 20% 0;
 }
-.StickyWrap .stickyItem {
+.StickyWrap > div {
     width: 50%;
+}
+.StickyWrap .stickyItem {
     height: fit-content;
     position: sticky;
     top: 100px;
@@ -32,7 +34,6 @@
 }
 
 .StickyWrap .stickyInfo {
-    width: 50%;
     padding-top: 20%;
 }
 .StickyWrap .stickyInfo ul {
@@ -84,4 +85,16 @@
 .StickyWrap .stickyInfo ul li.infoClick .info {
     font-size: 30px;
     font-weight: bold;
+}
+
+@media screen and (max-width: 767px) {
+    .StickyWrap {
+        flex-direction: column;
+    }
+    .StickyWrap > div {
+        width: 100%;
+    }
+    .StickyWrap .stickyItem {
+        position: static;
+    }
 }

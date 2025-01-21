@@ -150,7 +150,7 @@
     }
     .ScrollOpenWrap .SubText {
         flex-direction: column;
-        padding: 250px 20px 0 20px;
+        padding: 200px 20px 0 20px;
     }
     .ScrollOpenWrap .SubText .SubTextLeftWrap {
         width: 100%;

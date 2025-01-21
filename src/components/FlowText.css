@@ -9,7 +9,7 @@
 .marquee {
     display: flex;
     width: fit-content;
-    animation: scroll 45s linear infinite;
+    animation: scroll 80s linear infinite;
 }
 
 .marquee span {

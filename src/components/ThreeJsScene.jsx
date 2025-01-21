@@ -1,6 +1,6 @@
-import React, { useRef } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
-import { OrbitControls, useTexture } from '@react-three/drei';
+import React, { useEffect, useRef } from 'react';
+import { Canvas, useFrame, unmountComponentAtNode } from '@react-three/fiber';
+import { useTexture } from '@react-three/drei';
 
 import './ThreeJsScene.css';
 
@@ -86,8 +86,19 @@ const CombinedEllipse = ({ scrollY, activeSection }) => {
 };
 
 const Scene = ({ scrollY, activeSection }) => {
+    const canvasRef = useRef();
+
+    useEffect(() => {
+        // 💡 컴포넌트가 언마운트될 때 cleanup 함수로 canvas 제거
+        return () => {
+            if (canvasRef.current) {
+                unmountComponentAtNode(canvasRef.current);
+            }
+        };
+    }, [canvasRef]);
+
     return (
-        <div className="canvasWrap">
+        <div className="canvasWrap" ref={canvasRef}>
             <Canvas>
                 {/* 1. 환경광: 전체적인 배경 조명 */}
                 <ambientLight intensity={0.2} color="#ffffff" />
@@ -117,9 +128,6 @@ const Scene = ({ scrollY, activeSection }) => {
                 />
                 {/* 결합된 타원형 */}
                 <CombinedEllipse scrollY={scrollY} activeSection={activeSection} />
-
-                {/* 사용자 조작 가능 */}
-                <OrbitControls enableZoom={false} />
             </Canvas>
         </div>
     );

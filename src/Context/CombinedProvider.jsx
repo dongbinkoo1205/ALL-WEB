@@ -4,15 +4,18 @@ import SwiperProvider from './SwiperProvider';
 import MouseProvider from './MouseProvider';
 import LenisScrollProvider from './LenisScrollProvider';
 import ScrollSlideProvider from './ScrollSlideProvider';
+import MediaQueryContext from './MediaQueryContext';
 function CombinedProvider({ children }) {
     return (
         <LenisScrollProvider>
             <ScrollSlideProvider>
                 <SwiperProvider>
                     <AosProvider>
-                        <MouseProvider>
-                            <DataProvider>{children}</DataProvider>
-                        </MouseProvider>
+                        <MediaQueryContext>
+                            <MouseProvider>
+                                <DataProvider>{children}</DataProvider>
+                            </MouseProvider>
+                        </MediaQueryContext>
                     </AosProvider>
                 </SwiperProvider>
             </ScrollSlideProvider>

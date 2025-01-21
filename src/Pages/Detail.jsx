@@ -2,6 +2,8 @@ import { useParams } from 'react-router-dom';
 import SubHeader from '../components/SubHeader';
 import Viewer from '../components/Viewer';
 import useSite from '../hooks/useSite';
+import Footer from '../components/footer';
+import './Detail.css'
 
 function Detail({}) {
     const params = useParams();
@@ -29,6 +31,7 @@ function Detail({}) {
         <div className="detailPage">
             <SubHeader title={'UX・UI를 만나보세요.'}></SubHeader>
             <Viewer data={currentItems} />
+            <Footer option="black" />
         </div>
     );
 }

@@ -97,6 +97,10 @@
 /* 기본설정 CSS */
 /* 기본설정 CSS */
 /* 기본설정 CSS */
+html,
+body {
+}
+
 body * {
     box-sizing: border-box;
 }

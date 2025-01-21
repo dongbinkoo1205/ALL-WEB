@@ -9,9 +9,13 @@ import {
     faCaretRight,
     faXmark,
     faSliders,
+    faSun,
+    faCircle,
+    faGear,
+    faPlus,
+    faCaretDown,
 } from '@fortawesome/free-solid-svg-icons';
 // 아이콘 모음 객체
-
 const icons = {
     chevronDown: faChevronDown,
     question: faCircleQuestion,
@@ -21,6 +25,11 @@ const icons = {
     faCaretRight: faCaretRight,
     faXmark: faXmark,
     faSliders: faSliders,
+    faSun: faSun,
+    faCircle: faCircle,
+    faGear: faGear,
+    faPlus: faPlus,
+    faCaretDown: faCaretDown,
 };
 
 // 공통 Icon 컴포넌트

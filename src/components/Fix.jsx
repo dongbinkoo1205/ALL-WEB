@@ -54,8 +54,6 @@ function Fix({ range, onRangeChange, onFilterChange, handleClassChange, checkedS
     // 모바일 버전에서 옵션 설정 닫기 토글
     const mobCloseToggle = mobCloseSection ? 'block' : 'none';
 
-    
-
     return (
         <div className="Fix scrollBar Pretendard ScrollAdd" style={{ display: mobCloseToggle }}>
             <div className="FixTopWrap">
@@ -175,14 +173,12 @@ function Fix({ range, onRangeChange, onFilterChange, handleClassChange, checkedS
                         </li>
                     ))}
                 </ul>
-                {mobCloseSection && (
-                    <div className="mobCloseTrueCont">
-                        <div onClick={handleMobClose}>
-                            <Icon name={'subArrow'} fontSize={'18px'} color={'black'} />
-                            <span className="Pretendard">확인하기</span>
-                        </div>
+                <div className="mobCloseTrueCont">
+                    <div onClick={handleMobClose}>
+                        <Icon name={'subArrow'} fontSize={'18px'} color={'black'} />
+                        <span className="Pretendard">확인하기</span>
                     </div>
-                )}
+                </div>
             </div>
         </div>
     );

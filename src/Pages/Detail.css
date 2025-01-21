@@ -1,1 +1,7 @@
-
+.detailPage {
+    background-color: black;
+}
+.detailPage .marquee-container {
+    margin: 100px 0;
+    background-color: white;
+}
