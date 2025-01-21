@@ -7,7 +7,7 @@ export default defineConfig({
         exclude: ['three-stdlib'],
     },
     build: {
-        target: 'esnext', // 최신 JavaScript 기능 지원
-        outDir: 'dist' // 빌드 결과물을 저장할 폴더
+        target: 'esnext', // 최신 브라우저를 타겟으로 설정
+        outDir: 'dist', // 빌드 결과물을 저장할 폴더
     },
 });
