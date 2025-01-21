@@ -10,7 +10,7 @@ import MouseOver from '../components/MouseOver.jsx';
 import TransCustomCursor from '../components/TransCustomCursor';
 import ScrollChange from '../components/ScrollChange.jsx';
 import Scene from '../components/ThreeJsScene.jsx';
-import Footer from '../components/footer.jsx';
+import Footer from '../components/Footer.jsx';
 
 function MainPage() {
     const scrollY = useRef(0);

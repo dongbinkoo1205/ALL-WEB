@@ -1,6 +1,6 @@
 import { useEffect, useRef, createContext } from 'react';
 import { useLocation } from 'react-router-dom';
-import Lenis from '@studio-freight/lenis';
+import Lenis from 'lenis';
 
 export const LenisContext = createContext(null);
 

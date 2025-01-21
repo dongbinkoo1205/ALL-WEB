@@ -2,8 +2,8 @@ import { useParams } from 'react-router-dom';
 import SubHeader from '../components/SubHeader';
 import Viewer from '../components/Viewer';
 import useSite from '../hooks/useSite';
-import Footer from '../components/footer';
-import './Detail.css'
+import Footer from '../components/Footer';
+import './Detail.css';
 
 function Detail({}) {
     const params = useParams();

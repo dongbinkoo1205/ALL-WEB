@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import Header from '../components/Header';
 import HorizontalScroll from '../components/HorizontalScroll';
-import Footer from '../components/footer';
 function About() {
     useEffect(() => {
         // 컴포넌트가 마운트될 때 스크롤 초기화

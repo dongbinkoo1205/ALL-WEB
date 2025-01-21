@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { MediaQueryContext } from '../Context/MediaQueryContext';
-import './footer.css';
+import './Footer.css';
 const Footer = ({ option }) => {
     const { isMobile } = useContext(MediaQueryContext);
     const handleAlert = () => {
