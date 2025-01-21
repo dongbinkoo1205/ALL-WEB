@@ -4,7 +4,7 @@ import Detail from './Pages/Detail'; // Detail.jsx
 import NotFound from './Pages/NotFound'; // NotFound.jsx
 import MainPage from './Pages/MainPage'; // MainPage.jsx
 import About from './Pages/About'; // About.jsx
-import Portfolio from './Pages/Portfolio'; // Portfolio.jsx
+import Portfolio from '../src/Pages/Portfolio'; // Portfolio.jsx
 
 function App() {
     return (
