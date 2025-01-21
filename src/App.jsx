@@ -1,10 +1,10 @@
 import { Route, Routes } from 'react-router-dom';
 import CombinedProvider from './Context/CombinedProvider';
-import Detail from './Pages/Detail';
-import NotFound from './Pages/NotFound';
-import MainPage from './Pages/MainPage';
-import About from './Pages/About';
-import Portfolio from './Pages/Portfolio';
+import Detail from './Pages/Detail'; // Detail.jsx
+import NotFound from './Pages/NotFound'; // NotFound.jsx
+import MainPage from './Pages/MainPage'; // MainPage.jsx
+import About from './Pages/About'; // About.jsx
+import Portfolio from './Pages/Portfolio'; // Portfolio.jsx
 
 function App() {
     return (
