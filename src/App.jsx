@@ -1,10 +1,10 @@
 import { Route, Routes } from 'react-router-dom';
-import CombinedProvider from '@/Context/CombinedProvider';
-import Detail from '@/Pages/Detail'; // Detail.jsx
-import NotFound from '@/Pages/NotFound'; // NotFound.jsx
-import MainPage from '@/Pages/MainPage'; // MainPage.jsx
-import About from '@/Pages/About'; // About.jsx
-import Portfolio from '@/Pages/Portfolio';
+import CombinedProvider from './Context/CombinedProvider.jsx';
+import Detail from './Pages/Detail.jsx'; // Detail.jsx
+import NotFound from './Pages/NotFound.jsx'; // NotFound.jsx
+import MainPage from './Pages/MainPage.jsx'; // MainPage.jsx
+import About from './Pages/About.jsx'; // About.jsx
+import Portfolio from './Pages/Portfolio.jsx';
 
 function App() {
     return (
