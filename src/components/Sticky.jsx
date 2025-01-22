@@ -2,20 +2,33 @@ import './Sticky.css';
 import React, { useContext } from 'react';
 import CurrentTime from './CurrentTime';
 import { AosContext } from '../Context/AosProvider';
+import { MediaQueryContext } from '../Context/MediaQueryContext';
+
 function Sticky({ data }) {
     const { refresh } = useContext(AosContext); // refresh 메서드 가져오기
+    const { isMobile } = useContext(MediaQueryContext);
 
     return (
         <div className="StickyWrap Pretendard">
             <div className="stickyItem">
                 <p className="smi">Company Infomation</p>
-                <p className="mni">
-                    {`고객을 위하는 `}
-                    <span>{data.name}</span>
-                    {` 는 `}
-                    <br />
-                    숫자와 규모부터 다릅니다.
-                </p>
+                {isMobile ? (
+                    <p className="mni">
+                        <div>고객을 위하는</div>
+                        <div>
+                            <span style={{ display: 'inline-block' }}>{data.name}</span>는
+                        </div>
+                        <div>숫자와 규모부터 다릅니다.</div>
+                    </p>
+                ) : (
+                    <p className="mni">
+                        {`고객을 위하는 `}
+                        <span>{data.name}</span>
+                        {` 는 `}
+                        <br />
+                        숫자와 규모부터 다릅니다.
+                    </p>
+                )}
             </div>
             <div className="stickyInfo ">
                 <ul>
