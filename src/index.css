@@ -1,6 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 /* 폰트 정의 */
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/npm/pretendard/dist/web/static/pretendard.woff2') format('woff2'),
+        url('https://cdn.jsdelivr.net/npm/pretendard/dist/web/static/pretendard.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
 
 /* Want to see How Elevate Experiences? */
 @font-face {
@@ -64,7 +71,7 @@
     font-weight: normal;
 }
 .font_kimm {
-    font-family: 'KIMM_Bold', sans-serif !important;
+    font-family: 'KIMM_Bold', 'Pretendard' !important;
     font-weight: 700;
 }
 .font_SCD3 {
