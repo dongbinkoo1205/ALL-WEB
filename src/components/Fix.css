@@ -244,9 +244,9 @@ input[type='range']::-ms-track {
 }
 
 @media screen and (max-width: 1000px) {
-    /* .Fix .check_List .clData .layerChange {
+    .Fix .check_List .clData .layerChange {
         display: none;
-    } */
+    }
 }
 
 @media screen and (max-width: 767px) {
