@@ -2,7 +2,7 @@
 }
 .Viwer .mainViewer {
     width: 100dvw;
-    height: 100dvh;
+    height: 100vh;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -89,7 +89,7 @@
 .subDescContent {
     display: flex;
     width: 100%;
-    min-height: 100dvh;
+    min-height: 100vh;
 }
 .subDescContent > div {
     width: 50%;
