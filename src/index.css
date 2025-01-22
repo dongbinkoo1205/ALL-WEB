@@ -7,6 +7,7 @@
         url('https://cdn.jsdelivr.net/npm/pretendard/dist/web/static/pretendard.woff') format('woff');
     font-weight: 400;
     font-style: normal;
+    font-display: swap;
 }
 
 /* Want to see How Elevate Experiences? */
@@ -67,7 +68,9 @@
 }
 
 .Pretendard {
-    font-family: 'Pretendard' !important ;
+    font-family: -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Pretendard Variable', Pretendard, Roboto,
+        'Noto Sans KR', 'Segoe UI', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+        sans-serif;
     font-weight: normal;
 }
 .font_kimm {
@@ -113,7 +116,8 @@ body * {
 }
 
 body {
-    font-family: 'Pretendard';
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', Roboto, 'Noto Sans KR',
+        'Segoe UI', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
 }
 .bgColorBlack {
     background-color: black;
