@@ -84,7 +84,7 @@ export const SubCategorieDesc = [
     },
     {
         id: 3,
-        title: '라이오 버튼 레이아웃입니다',
+        title: '라디오 버튼 레이아웃입니다',
         image: 'https://uibowl.io/_next/image?url=%2Fimages%2F178.jpg&w=640&q=75',
         top: 100,
     },
@@ -120,7 +120,7 @@ export const SubCategorieDesc = [
     },
     {
         id: 9,
-        title: '시간피커 레이아웃입니다',
+        title: '시간 피커 레이아웃입니다',
         image: 'https://uibowl.io/_next/image?url=%2Fimages%2F193.jpg&w=640&q=75',
         top: 400,
     },
