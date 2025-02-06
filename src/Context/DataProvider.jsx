@@ -6,7 +6,7 @@ export const DataDispatchContext = createContext();
 
 const DataProvider = ({ children }) => {
     const [data, setData] = useState(MokData);
-    const idRef = useRef(101);
+    const idRef = useRef(51);
 
     const onCreate = () => {
         const newData = {

@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import './ScrollScale.css';
 import Icon from '../public/Icon';
 
 const ScrollScale = () => {
     const [scale, setScale] = useState(1.4);
+    const ScrollSectionRef = useRef(null);
 
     useEffect(() => {
         const handleScroll = () => {
-            const section = document.querySelector('.scrollTextSection');
+            const section = ScrollSectionRef.current;
             if (!section) return;
             const rect = section.getBoundingClientRect();
             const sectionMiddle = rect.height / 2;
@@ -21,7 +22,7 @@ const ScrollScale = () => {
     }, []);
 
     return (
-        <div className="scrollTextSection">
+        <div className="scrollTextSection" ref={ScrollSectionRef}>
             <ul className="scrollSubText">
                 <li className=" font_SCD3">Professional Community</li>
                 <li className="st Pretendard">

@@ -34,11 +34,11 @@ function Header({ title, size, font }) {
             </div>
             <div className="header_menu">
                 <ul className="menuWrap">
-                    <li onClick={() => handleNavigate('/About')}>About</li>
                     <li onClick={() => handleNavigate('/Portfolio')}>
                         Portfolio
                         <HeadIcons name="faHeart" width={'8px'} position={'absolute'} top={'5px'} right={'-8px'} />
                     </li>
+                    <li onClick={() => handleNavigate('/About')}>About</li>
                 </ul>
             </div>
         </header>
