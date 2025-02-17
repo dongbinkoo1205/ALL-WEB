@@ -16,7 +16,7 @@ const MockData = await Promise.all(
         const randomSubSelectOption = randomCompany.subCategory; // subName 값 추출
         const randomSubindustryItems = randomCompany.industryItems; // subName 값 추출
 
-        const photocategories = ['coffee'];
+        const photocategories = ['Consumer electronics', 'object', 'Mockup'];
         const randomPhotoCategories = photocategories[Math.floor(Math.random() * photocategories.length)];
         const response = await axios.get(
             `https://api.unsplash.com/search/photos?query=${randomPhotoCategories}&client_id=${accessKey}`

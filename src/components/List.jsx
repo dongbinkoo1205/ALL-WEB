@@ -59,7 +59,7 @@ const List = ({ range, layerChange, handleSumCheck, mobCloseSection, handleMobCl
         }
 
         if (newCheck.Industry) {
-            // 만약에 내가 선택한 체크박스의 이름이 Industry라면, filtered에서  randomSubindustryItems를 찾아서 내가 선택한 newCheck.Industry의 값과 일치하는 값만 랜더링
+            // 만약에 내가 선택한 체크박스의 이름이 Industry라면, filtered에서 randomSubindustryItems를 찾아서 내가 선택한 newCheck.Industry의 값과 일치하는 값만 랜더링
             filtered = filtered.filter((item) => item.randomSubindustryItems === newCheck.Industry);
         }
 
@@ -236,7 +236,6 @@ const List = ({ range, layerChange, handleSumCheck, mobCloseSection, handleMobCl
                                 layerChange={layerChange}
                             />
                         ))}
-
                         {/* 데이터가 더 있을 때만 "더보기" 버튼 표시 */}
                         {visibleCount < filteredData.length && (
                             <button className="load_more_button" onClick={handleLoadMore}>

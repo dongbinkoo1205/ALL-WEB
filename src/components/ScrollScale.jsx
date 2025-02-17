@@ -38,10 +38,9 @@ const ScrollScale = () => {
                     <span>1</span>
                     <span>8</span>
                     <span className="gr">
-                        4{/* <Icon name={'faCopyright'} width={'30vw'} /> */}
-                        <em className="tagYear font_SCD3">Years of experience</em>
+                        4<em className="tagYear font_SCD3">Years of experience</em>
                     </span>
-                    <span className="gr">0{/* <Icon name={'faCopyright'} width={'30vw'} /> */}</span>
+                    <span className="gr">0</span>
                 </div>
             </div>
         </div>

@@ -35,6 +35,7 @@ function MouseProvider({ children }) {
             setCursorPosition({ x, y });
         });
     };
+
     const value = {
         isMouseOver,
         cursorPosition,
@@ -48,6 +49,7 @@ function MouseProvider({ children }) {
         setCursorName,
         setCursorWidth,
     };
+    
     return <CursorContext.Provider value={value}>{children}</CursorContext.Provider>;
 }
 
